@@ -7,20 +7,27 @@ width: 80%;
 margin: 2rem auto;
 display: flex;
 justify-content: space-around;
-border: 1px solid black;
+/* border: 1px solid black; */
 /* position: fixed; */
 
 a {
     &:hover {
-        transition: .5s;
-        background-color: grey;
+        transition: .5s ease-in-out;
+        background-color: #05386b;
+        color: #edf4e1;
     }
     padding: 1rem;
     width: 25%;
-    border: 1px solid black;
+    border-right: 2px solid #edf4e1;
+    &:last-child {
+        border: none;
+    }
     text-align: center;
     text-decoration: none;
     color: black;
+    background-color: #5bdb95;
+
+
 }
 `;
 

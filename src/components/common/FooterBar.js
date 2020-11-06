@@ -6,7 +6,6 @@ import '../../styles/temp.css';
 
 const StyledFooter = Styled.div`
 display: flex;
-/* justify-content: space-around; */
 flex-direction: column;
 align-items: center;
 width: 100%;
@@ -14,9 +13,8 @@ margin: 0;
 position: fixed;
 z-index: 999;
 bottom: 0;
-/* border: 2px solid black; */
-background-color: green;
-height: 25vh;
+background-color: #5bdb95;
+height: 20vh;
 transition: all 0.8s ease-in-out;
 min-height: 175px;
 
@@ -28,7 +26,7 @@ min-height: 175px;
     padding: 0;
     background-color: black;
     border-radius: 15px;
-    transform: translateY(-30px);
+    transform: translateY(-25px);
 }
 
 .cityCompareContainer {
@@ -39,22 +37,23 @@ min-height: 175px;
     align-items: center;
 
     .cityPlaceholder {
-        border: 1px solid black;
-        background-color: grey;
+        background-color: #edf4e1;
         width: 25%;
-        height: 80%;
+        height: 90%;
         border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
 #compareBTN {
-    border: 1px solid black;
-    padding: 0.5rem 3rem;
+    padding: 0.33rem 3rem;
     border-radius: 15px;
     text-decoration: none;
-    color: white;
+    color: #edf4e1;
     font-size: 1.2rem;
-    background-color: purple;
+    background-color: #05386b;
 
 }
 `;

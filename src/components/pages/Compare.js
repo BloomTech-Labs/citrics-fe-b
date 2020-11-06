@@ -14,6 +14,7 @@ max-width: 1500px;
 border: 1px solid grey;
 margin: 0 auto;
 padding: 1rem;
+padding-top: 0;
 height: 100vh;
 `;
 
