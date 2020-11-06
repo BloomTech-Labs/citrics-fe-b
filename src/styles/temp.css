@@ -1,0 +1,17 @@
+.hidden {
+    transition: 1s;
+    height: 10px;
+    min-height: 0;
+    max-height: 10px;
+    overflow: hidden;
+}
+
+.selected {
+    padding: 1rem;
+    width: 25%;
+    border: 1px solid black;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    background-color: aqua;
+}
