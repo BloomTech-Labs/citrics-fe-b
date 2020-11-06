@@ -1,9 +1,12 @@
 .hidden {
-    transition: 1s;
-    height: 10px;
-    min-height: 0;
-    max-height: 10px;
-    overflow: hidden;
+    transition: all 0.8s ease-in-out;
+    transform: translateY(100%);
+    background-color: transparent !important;
+}
+
+.buttonToggle {
+    transition: all 1s ease-in-out;
+    transform: translateY(-30px);
 }
 
 .selected {

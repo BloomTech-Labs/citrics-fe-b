@@ -8,6 +8,7 @@ margin: 2rem auto;
 display: flex;
 justify-content: space-around;
 border: 1px solid black;
+/* position: fixed; */
 
 a {
     &:hover {

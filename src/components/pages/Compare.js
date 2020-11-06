@@ -8,9 +8,18 @@ import IncomeViz from './IncomeViz';
 import TemperatureViz from './TemperatureViz';
 import Styled from 'styled-components';
 
+const StyledCompareDiv = Styled.div`
+width: 85%;
+max-width: 1500px;
+border: 1px solid grey;
+margin: 0 auto;
+padding: 1rem;
+height: 100vh;
+`;
+
 const Compare = () => {
   return (
-    <div>
+    <StyledCompareDiv>
       <CompareNav />
 
       <Route exact path="/compare/population">
@@ -25,7 +34,7 @@ const Compare = () => {
       <Route exact path="/compare/avg-temperature">
         <TemperatureViz />
       </Route>
-    </div>
+    </StyledCompareDiv>
   );
 };
 
