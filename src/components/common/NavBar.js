@@ -1,6 +1,7 @@
 import React from 'react';
 import Styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
+import { UserOutlined, HomeOutlined, HeartOutlined } from '@ant-design/icons';
 
 const StyledNavBar = Styled.div`
 width: 100%;
@@ -12,6 +13,9 @@ align-items: center;
 .navBarContainer {
   width: 100%;
   padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   img {
     width: 200px;
@@ -21,6 +25,28 @@ align-items: center;
       cursor: url(hand.cur), pointer;
     }
   }
+      #NavItems {
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+
+      #favorites {
+        margin-right: 1.5rem;
+      }
+      .NavItem {
+        &:hover {
+          border-bottom: 2px solid #05386b;
+        }
+        &:focus, &:active, &:after {
+          decoration: none;
+          outline: none;
+        }
+        margin: 0;
+        padding: 0.75rem;
+        font-size: 1.3rem;
+        color: #05386b;
+      }
 }
 
 `;
@@ -39,7 +65,24 @@ const NavBar = () => {
             history.push('/');
           }}
         />
-        <div></div>
+        <div id="NavItems">
+          <HeartOutlined
+            className="NavItem"
+            id="favorites"
+            onClick={evt => {
+              evt.preventDefault();
+              history.push('/');
+            }}
+          />
+          <UserOutlined
+            className="NavItem"
+            id="profile"
+            onClick={evt => {
+              evt.preventDefault();
+              history.push('/');
+            }}
+          />
+        </div>
       </div>
     </StyledNavBar>
   );
