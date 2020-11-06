@@ -14,9 +14,10 @@ position: fixed;
 z-index: 999;
 bottom: 0;
 background-color: #5bdb95;
-height: 20vh;
+height: 22.5vh;
 transition: all 0.8s ease-in-out;
 min-height: 175px;
+max-height: 250px;
 
 #footerToggle {
     height: 12px;
@@ -38,23 +39,29 @@ min-height: 175px;
 
     .cityPlaceholder {
         background-color: #edf4e1;
-        width: 25%;
+        width: 30%;
         height: 90%;
         border-radius: 15px;
         display: flex;
         justify-content: center;
         align-items: center;
+        
     }
 }
 
 #compareBTN {
+    &:hover {
+        transition: all 0.5s ease-in-out;
+        /* background-color: #edf4e1; */
+        color: #5bdb95;
+    }
     padding: 0.33rem 3rem;
     border-radius: 15px;
     text-decoration: none;
     color: #edf4e1;
     font-size: 1.2rem;
     background-color: #05386b;
-
+    transform: translateY(-5px)
 }
 `;
 
@@ -83,11 +90,9 @@ const FooterBar = () => {
         }}
       ></div>
       {compareBTNDisable ? null : (
-        <div>
-          <Link id="compareBTN" to="/compare">
-            Compare
-          </Link>
-        </div>
+        <Link id="compareBTN" to="/compare">
+          Compare
+        </Link>
       )}
       <div class="cityCompareContainer">
         <div class="cityPlaceholder">I be an city placholder</div>
