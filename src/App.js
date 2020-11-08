@@ -2,6 +2,7 @@ import React from 'react';
 
 import Header from './components/common/Header';
 import Home from './components/pages/Home';
+import UserProfile from './components/pages/ProfileList/Profile';
 import { Route, Redirect, Switch } from 'react-router-dom';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+            <UserProfile />
           </Route>
         </Switch>
       </div>

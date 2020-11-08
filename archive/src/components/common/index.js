@@ -1,6 +1,6 @@
 import FormButton from './FormButton';
 import FormInput from './FormInput';
-import List from './List';
+import List from '../../../../src/components/common/List';
 import LoadingComponent from './LoadingComponent';
 import Button from './Button';
 

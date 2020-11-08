@@ -1,16 +1,16 @@
 import React from 'react';
-import {ProfileBody, ProfileName, ProfileBio, ProfileImg } from 'reactstrap';
+import {CardBody, CardTitle, CardText, CardImg} from 'reactstrap';
 import { Link } from "react-router-dom";
 function UserProfile(props) {
-  const {details} = props
+  const {item} = props
   return (
-    <Link to={`/profile/${details.id}`}>
+    <Link to={`/profile`}>
       <div className='card'>
-                <ProfileImg top width="100%" src={details.photo_url} alt={details.title}/>
-                <ProfileBody>
-                    <ProfileName tag='h3'> {details.title}</ProfileName>
-                    <ProfileBio> {details.description}</ProfileBio>
-                </ProfileBody>
+                <CardImg src={item.avatarUrl} alt={item.name} top width="100%"/>
+                <CardBody>
+                    <CardTitle tag='h3'> {item.name} </CardTitle>
+                    <CardText> Profile Bio</CardText>
+                </CardBody>
     </div>
     </Link>
   )
