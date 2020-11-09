@@ -20,14 +20,17 @@ min-height: 175px;
 max-height: 250px;
 
 #footerToggle {
+    &:hover {
+        cursor: url(hand.cur), pointer;
+    }
     height: 12px;
     width: 75px;
     font-size: 4rem;
-    margin-top: 10px;
+    margin: 0;
     padding: 0;
-    background-color: black;
+    background-color: #05386b;
     border-radius: 15px;
-    transform: translateY(-25px);
+    transform: translateY(-20px);
 }
 
 .cityCompareContainer {
@@ -61,7 +64,6 @@ max-height: 250px;
     color: #edf4e1;
     font-size: 1.2rem;
     background-color: #05386b;
-    transform: translateY(-5px)
 }
 `;
 
