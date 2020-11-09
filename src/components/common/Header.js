@@ -1,7 +1,11 @@
-import React from 'react';
+import React from 'react'
 
 const Header = props => {
-  return <h1>Header Goes Here</h1>;
-};
+  return (
+    <header>
+      <h1>Header Goes Here</h1>
+    </header>
+  )
+}
 
-export default Header;
+export default Header

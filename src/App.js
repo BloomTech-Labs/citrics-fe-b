@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-import Header from './components/common/Header';
-import Home from './components/pages/Home';
-import { Route, Redirect, Switch } from 'react-router-dom';
+import Header from './components/common/Header'
+import Home from './components/pages/Home'
+import { Route, Redirect, Switch } from 'react-router-dom'
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         </Switch>
       </div>
     </>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,0 +1,12 @@
+/* This is where we will define CSS varibles */
+
+:root {
+  /* fonts */
+  --font-primary: 'Tajawal', sans-serif;
+
+  /* colors */
+  --color-blue: #05386B;
+  --color-green: #5BDB95;
+  --color-off-white: #EDF4E1;
+}
+
