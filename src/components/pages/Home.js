@@ -1,23 +1,31 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import CityCard from './common/CityCard'
+import SearchBar from '../common/SearchBar'
+import CityCard from '../common/CityCard'
+import { getCities } from '../../state/actions'
 
 const Home = props => {
   useEffect(() => {
-    //Placeholder until we add backend
+    props.getCities()
   }, [])
-  
-  return props.cities.map(city => {
-    return <CityCard key={city.id} city={city} />
-  })
+
+  return (
+    <section>
+      <SearchBar />
+
+      {props.cities.map(city => {
+        return <CityCard key={city.id} city={city} />
+      })}
+    </section>
+  )
 }
 
-// const mapStateToProps = state => {
-//   return{
-//     cities: state.reducers.cities,
-//   }
-// }
+const mapStateToProps = state => {
+  return {
+    cities: state.cities,
+  }
+}
 
-export default Home
+// export default Home
 
-// export default connect(mapStateToProps, {getCities})(Home)
+export default connect(mapStateToProps, { getCities })(Home)

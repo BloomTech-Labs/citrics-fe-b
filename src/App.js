@@ -5,6 +5,7 @@ import NavBar from './components/common/NavBar'
 import Home from './components/pages/Home'
 import Compare from './components/pages/Compare'
 import Footer from './components/common/FooterBar'
+import UserProfile from './components/pages/ProfileList/Profile'
 
 function App() {
   return (
@@ -14,10 +15,12 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
-            <UserProfile />
           </Route>
           <Route path="/compare">
             <Compare />
+          </Route>
+          <Route path="/profile">
+            <UserProfile />
           </Route>
         </Switch>
         <Footer />
