@@ -7,7 +7,6 @@ import { List } from '../../../../src/components/common';
 
 import RenderProfileListPage from './RenderProfileListPage';
 
-import Profile from './Profile';
 
 // Here is an example of using our reusable List component to display some list data to the UI.
 const ProfileList = () => {

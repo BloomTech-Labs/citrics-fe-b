@@ -9,9 +9,9 @@ const RenderProfileListPage = props => (
       <Link to="/">Home</Link>
     </p>
     {props.data.map(item => (
-      <UserProfile key={item.id}>
+      <UserProfile key={item.id}/>
         
-      </UserProfile>
+      
     ))}
   </div>
 );

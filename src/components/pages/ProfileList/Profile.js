@@ -6,9 +6,9 @@ function UserProfile(props) {
   return (
     <Link to={`/profile`}>
       <div className='card'>
-                <CardImg src={item.avatarUrl} alt={item.name} top width="100%"/>
+                <CardImg alt={item.username} top width="100%"/>
                 <CardBody>
-                    <CardTitle tag='h3'> {item.name} </CardTitle>
+                    <CardTitle tag='h3'> {item.username} </CardTitle>
                     <CardText> Profile Bio</CardText>
                 </CardBody>
     </div>
