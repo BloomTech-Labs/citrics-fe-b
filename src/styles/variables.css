@@ -10,3 +10,35 @@
   --color-off-white: #EDF4E1;
 }
 
+@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
+  body {
+    --color-text: var(--ajw-black);
+    --color-background: var(--color-off-white);
+    --color-background-header: var(--ajw-white);
+    --color-border: var(--ajw-black);
+  }
+
+  .dark-mode{
+    --color-text: var(--ajw-white);
+    --color-background: var(--ajw-black);
+    --color-background-header: var(--ajw-dark-black);
+    --color-border: var(--ajw-white);
+  }
+
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --color-text: var(--ajw-white);
+    --color-background: var(--ajw-black);
+    --color-background-header: var(--ajw-dark-black);
+    --color-border: var(--ajw-white);
+  }
+
+  .light-mode{
+    --color-text: var(--ajw-black);
+    --color-background: white;
+    --color-background-header: var(--ajw-white);
+    --color-border: var(--ajw-black);
+  }
+}

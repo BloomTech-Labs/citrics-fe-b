@@ -10,11 +10,11 @@ const Home = props => {
   }, [])
 
   return (
-    <section>
+    <section id="home">
       <SearchBar />
 
       {props.cities.map(city => {
-        return <CityCard key={city.id} city={city} />
+        return <CityCard key={city.cityid} city={city} />
       })}
     </section>
   )
