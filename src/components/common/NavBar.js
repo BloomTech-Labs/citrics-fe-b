@@ -1,7 +1,7 @@
-import React from 'react';
-import Styled from 'styled-components';
-import { useHistory } from 'react-router-dom';
-import { UserOutlined, HomeOutlined, HeartOutlined } from '@ant-design/icons';
+import React from 'react'
+import Styled from 'styled-components'
+import { useHistory } from 'react-router-dom'
+import { UserOutlined, HomeOutlined, HeartOutlined } from '@ant-design/icons'
 
 import SearchBar from './SearchBar';
 
@@ -14,7 +14,7 @@ align-items: center;
 
 .navBarContainer {
   width: 100%;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,7 +22,7 @@ align-items: center;
   img {
     width: 200px;
     &:hover {
-      transition: all 0.5s ease-in-out;
+      transition: all 0.4s ease-in-out;
       transform: scale(1.1);
       cursor: url(hand.cur), pointer;
     }
@@ -34,7 +34,7 @@ align-items: center;
       }
 
       #favorites {
-        margin-right: 1.5rem;
+        margin: 0 1.25rem;
       }
       .NavItem {
         &:hover {
@@ -51,10 +51,10 @@ align-items: center;
       }
 }
 
-`;
+`
 
 const NavBar = () => {
-  let history = useHistory();
+  let history = useHistory()
 
   return (
     <StyledNavBar>
@@ -63,32 +63,40 @@ const NavBar = () => {
           src={require('../../images/citrics.png')}
           alt="citrics logo and name"
           onClick={evt => {
-            evt.preventDefault();
-            history.push('/');
+            evt.preventDefault()
+            history.push('/')
           }}
         />
 
         <div id="NavItems">
+          <HomeOutlined
+            className="NavItem"
+            id="home"
+            onClick={evt => {
+              evt.preventDefault();
+              history.push('/');
+            }}
+          />
           <HeartOutlined
             className="NavItem"
             id="favorites"
             onClick={evt => {
-              evt.preventDefault();
-              history.push('/');
+              evt.preventDefault()
+              history.push('/')
             }}
           />
           <UserOutlined
             className="NavItem"
             id="profile"
             onClick={evt => {
-              evt.preventDefault();
-              history.push('/');
+              evt.preventDefault()
+              history.push('/')
             }}
           />
         </div>
       </div>
     </StyledNavBar>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar

@@ -1,6 +1,6 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import Styled from 'styled-components';
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import Styled from 'styled-components'
 
 const StyledCompareNav = Styled.div`
 width: 80%;
@@ -29,7 +29,7 @@ a {
 
 
 }
-`;
+`
 
 const CompareNav = () => {
   return (
@@ -47,7 +47,7 @@ const CompareNav = () => {
         AVG Temperature
       </NavLink>
     </StyledCompareNav>
-  );
-};
+  )
+}
 
-export default CompareNav;
+export default CompareNav

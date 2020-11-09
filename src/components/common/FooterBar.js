@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import Styled from 'styled-components';
+import React, { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import Styled from 'styled-components'
 
-import '../../styles/temp.css';
+import '../../styles/temp.css'
 
 const StyledFooter = Styled.div`
 display: flex;
@@ -20,14 +20,17 @@ min-height: 175px;
 max-height: 250px;
 
 #footerToggle {
+    &:hover {
+        cursor: url(hand.cur), pointer;
+    }
     height: 12px;
     width: 75px;
     font-size: 4rem;
-    margin-top: 10px;
+    margin: 0;
     padding: 0;
-    background-color: black;
+    background-color: #05386b;
     border-radius: 15px;
-    transform: translateY(-25px);
+    transform: translateY(-20px);
 }
 
 .cityCompareContainer {
@@ -61,32 +64,31 @@ max-height: 250px;
     color: #edf4e1;
     font-size: 1.2rem;
     background-color: #05386b;
-    transform: translateY(-5px)
 }
-`;
+`
 
 const FooterBar = () => {
-  const [compareBTNDisable, setCompareBTNDisable] = useState(false);
-  let location = useLocation();
+  const [compareBTNDisable, setCompareBTNDisable] = useState(false)
+  let location = useLocation()
   useEffect(() => {
     if (location.pathname.includes('compare')) {
-      setCompareBTNDisable(true);
+      setCompareBTNDisable(true)
     } else {
-      setCompareBTNDisable(false);
+      setCompareBTNDisable(false)
     }
-  }, [location]);
+  }, [location])
 
   const toggleFooter = () => {
-    document.querySelector('#footerBar').classList.toggle('hidden');
-    document.querySelector('#footerToggle').classList.toggle('buttonToggle');
-  };
+    document.querySelector('#footerBar').classList.toggle('hidden')
+    document.querySelector('#footerToggle').classList.toggle('buttonToggle')
+  }
 
   return (
     <StyledFooter id="footerBar">
       <div
         id="footerToggle"
         onClick={() => {
-          toggleFooter();
+          toggleFooter()
         }}
       ></div>
       {compareBTNDisable ? null : (
@@ -100,7 +102,7 @@ const FooterBar = () => {
         <div class="cityPlaceholder">I be an city placholder</div>
       </div>
     </StyledFooter>
-  );
-};
+  )
+}
 
-export default FooterBar;
+export default FooterBar

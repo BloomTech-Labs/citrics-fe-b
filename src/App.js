@@ -1,10 +1,10 @@
-import React from 'react';
-import { Route, Redirect, Switch } from 'react-router-dom';
+import React from 'react'
+import { Route, Redirect, Switch } from 'react-router-dom'
 
-import NavBar from './components/common/NavBar';
-import Home from './components/pages/Home';
-import Compare from './components/pages/Compare';
-import Footer from './components/common/FooterBar';
+import NavBar from './components/common/NavBar'
+import Home from './components/pages/Home'
+import Compare from './components/pages/Compare'
+import Footer from './components/common/FooterBar'
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
         <Footer />
       </div>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
