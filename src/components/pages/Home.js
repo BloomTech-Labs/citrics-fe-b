@@ -1,7 +1,8 @@
 import React from 'react';
+import SearchBar from '../common/SearchBar';
 
 const Home = props => {
-  return <h1>Home Page Goes Here</h1>;
+  return <SearchBar />;
 };
 
 export default Home;
