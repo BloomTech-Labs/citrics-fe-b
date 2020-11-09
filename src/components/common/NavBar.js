@@ -12,7 +12,7 @@ align-items: center;
 
 .navBarContainer {
   width: 100%;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,7 +20,7 @@ align-items: center;
   img {
     width: 200px;
     &:hover {
-      transition: all 0.5s ease-in-out;
+      transition: all 0.4s ease-in-out;
       transform: scale(1.1);
       cursor: url(hand.cur), pointer;
     }
@@ -32,7 +32,7 @@ align-items: center;
       }
 
       #favorites {
-        margin-right: 1.5rem;
+        margin: 0 1.25rem;
       }
       .NavItem {
         &:hover {
@@ -66,6 +66,14 @@ const NavBar = () => {
           }}
         />
         <div id="NavItems">
+          <HomeOutlined
+            className="NavItem"
+            id="home"
+            onClick={evt => {
+              evt.preventDefault();
+              history.push('/');
+            }}
+          />
           <HeartOutlined
             className="NavItem"
             id="favorites"
