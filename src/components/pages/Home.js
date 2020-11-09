@@ -6,7 +6,7 @@ const Home = props => {
   useEffect(() => {
     //Placeholder until we add backend
   }, [])
-
+  
   return props.cities.map(city => {
     return <CityCard key={city.id} city={city} />
   })
