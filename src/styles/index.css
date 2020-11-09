@@ -1,5 +1,2 @@
-/* This exports all of the styles to our documents */
-
 @import './variables.css';
 @import './general.css';
-@import './reset.css';
