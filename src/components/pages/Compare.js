@@ -1,12 +1,12 @@
-import { Switch } from 'antd';
-import React from 'react';
-import { Route } from 'react-router-dom';
-import CompareNav from '../common/CompareNav';
-import PopulationViz from './PopulationViz';
-import HomePriceViz from './HomePriceViz';
-import IncomeViz from './IncomeViz';
-import TemperatureViz from './TemperatureViz';
-import Styled from 'styled-components';
+import { Switch } from 'antd'
+import React from 'react'
+import { Route } from 'react-router-dom'
+import CompareNav from '../common/CompareNav'
+import PopulationViz from './PopulationViz'
+import HomePriceViz from './HomePriceViz'
+import IncomeViz from './IncomeViz'
+import TemperatureViz from './TemperatureViz'
+import Styled from 'styled-components'
 
 const StyledCompareDiv = Styled.div`
 width: 85%;
@@ -16,7 +16,7 @@ margin: 0 auto;
 padding: 1rem;
 padding-top: 0;
 height: 100vh;
-`;
+`
 
 const Compare = () => {
   return (
@@ -36,7 +36,7 @@ const Compare = () => {
         <TemperatureViz />
       </Route>
     </StyledCompareDiv>
-  );
-};
+  )
+}
 
-export default Compare;
+export default Compare

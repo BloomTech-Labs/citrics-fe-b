@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import Styled from 'styled-components';
+import React, { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import Styled from 'styled-components'
 
-import '../../styles/temp.css';
+import '../../styles/temp.css'
 
 const StyledFooter = Styled.div`
 display: flex;
@@ -65,30 +65,30 @@ max-height: 250px;
     font-size: 1.2rem;
     background-color: #05386b;
 }
-`;
+`
 
 const FooterBar = () => {
-  const [compareBTNDisable, setCompareBTNDisable] = useState(false);
-  let location = useLocation();
+  const [compareBTNDisable, setCompareBTNDisable] = useState(false)
+  let location = useLocation()
   useEffect(() => {
     if (location.pathname.includes('compare')) {
-      setCompareBTNDisable(true);
+      setCompareBTNDisable(true)
     } else {
-      setCompareBTNDisable(false);
+      setCompareBTNDisable(false)
     }
-  }, [location]);
+  }, [location])
 
   const toggleFooter = () => {
-    document.querySelector('#footerBar').classList.toggle('hidden');
-    document.querySelector('#footerToggle').classList.toggle('buttonToggle');
-  };
+    document.querySelector('#footerBar').classList.toggle('hidden')
+    document.querySelector('#footerToggle').classList.toggle('buttonToggle')
+  }
 
   return (
     <StyledFooter id="footerBar">
       <div
         id="footerToggle"
         onClick={() => {
-          toggleFooter();
+          toggleFooter()
         }}
       ></div>
       {compareBTNDisable ? null : (
@@ -102,7 +102,7 @@ const FooterBar = () => {
         <div class="cityPlaceholder">I be an city placholder</div>
       </div>
     </StyledFooter>
-  );
-};
+  )
+}
 
-export default FooterBar;
+export default FooterBar
