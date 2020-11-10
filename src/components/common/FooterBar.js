@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Styled from 'styled-components'
-
+import ComparePlaceHolder from '../common/ComparePlaceHolder'
 import '../../styles/temp.css'
 
 const StyledFooter = Styled.div`
@@ -18,6 +18,7 @@ height: 22.5vh;
 transition: all 0.8s ease-in-out;
 min-height: 175px;
 max-height: 250px;
+border-top: 1px solid #05386B;
 
 #footerToggle {
     &:hover {
@@ -31,6 +32,7 @@ max-height: 250px;
     background-color: #05386b;
     border-radius: 15px;
     transform: translateY(-20px);
+    box-shadow: 0px 0px 8px #5BDB95;
 }
 
 .cityCompareContainer {
@@ -40,7 +42,7 @@ max-height: 250px;
     justify-content: space-around;
     align-items: center;
 
-    .cityPlaceholder {
+    /* .cityPlaceholder {
         background-color: #edf4e1;
         width: 30%;
         height: 90%;
@@ -48,8 +50,7 @@ max-height: 250px;
         display: flex;
         justify-content: center;
         align-items: center;
-        
-    }
+    } */
 }
 
 #compareBTN {
@@ -76,9 +77,6 @@ const FooterBar = () => {
     } else {
       setCompareBTNDisable(false)
     }
-  }, [location])
-
-  useEffect(() => {
     if (location.pathname.includes('profile')) {
       document.querySelector('#footerBar').classList.add('hidden')
       document.querySelector('#footerToggle').classList.add('buttonToggle')
@@ -104,9 +102,12 @@ const FooterBar = () => {
         </Link>
       )}
       <div class="cityCompareContainer">
+        {/* <div class="cityPlaceholder">I be an city placholder</div>
         <div class="cityPlaceholder">I be an city placholder</div>
-        <div class="cityPlaceholder">I be an city placholder</div>
-        <div class="cityPlaceholder">I be an city placholder</div>
+        <div class="cityPlaceholder">I be an city placholder</div> */}
+        <ComparePlaceHolder />
+        <ComparePlaceHolder />
+        <ComparePlaceHolder />
       </div>
     </StyledFooter>
   )

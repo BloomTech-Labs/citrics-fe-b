@@ -2,6 +2,7 @@
     transition: all 0.8s ease-in-out;
     transform: translateY(100%);
     background-color: transparent !important;
+    border: none !important;
 }
 
 .buttonToggle {
