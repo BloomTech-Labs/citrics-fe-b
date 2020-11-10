@@ -14,17 +14,17 @@ function UserProfile(props) {
           <CardTitle tag="h3"> Name Here </CardTitle>
         </CardBody>
       </div>
-      <div class="card" style={{ width: "50%", alignItems: "center", backgroundColor: "#05386B", color: "#EDF4E1", fontFamily: "Tajawal, sans-serif", marginTop: "5%", marginLeft: "5%"}}>
+      <div class="card" style={{ width: "50%", alignItems: "center", backgroundColor: "#5BDB95", borderColor: "#05386B", color: "#05386B", fontFamily: "Tajawal, sans-serif", marginTop: "5%", marginLeft: "5%"}}>
         <CardBody alignItems="center" >
           <CardTitle tag="h2"> User Preferences </CardTitle>
           <CardText> </CardText>
         </CardBody>
       </div>
 
-      <div class="card" style={{ width: "35%", backgroundColor: '#05386B', alignItems: "center", color: "#EDF4E1", fontFamily: "Tajawal, sans-serif", marginTop: "5%"}}>
+      <div class="card" style={{ width: "30%", backgroundColor: '#5BDB95', alignItems: "center", color: "#05386B", borderColor: "#05386B", fontFamily: "Tajawal, sans-serif", marginTop: "5%", marginRight: "5%"}}>
         <CardBody alignItems="center" >
           <CardTitle tag="h2"> About Me </CardTitle>
-          <CardText> Bio here</CardText>
+          <CardText> </CardText>
         </CardBody>
 
       </div>
@@ -32,7 +32,7 @@ function UserProfile(props) {
       <div class="card" style={{ width: "50%", alignItems: "center", backgroundColor: "#05386B", color: "#EDF4E1", fontFamily: "Tajawal, sans-serif", marginTop: "5%"}}>
         <CardBody alignItems="center" >
           <CardTitle tag="h2"> Favorites </CardTitle>
-          <CardText> List here </CardText>
+          <CardText> </CardText>
         </CardBody>
 
       </div>
