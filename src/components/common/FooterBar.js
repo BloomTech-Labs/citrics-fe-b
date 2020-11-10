@@ -58,7 +58,7 @@ max-height: 250px;
         /* background-color: #edf4e1; */
         color: #5bdb95;
     }
-    padding: 0.33rem 3rem;
+    padding: 0.10rem 3rem;
     border-radius: 15px;
     text-decoration: none;
     color: #edf4e1;
@@ -75,6 +75,13 @@ const FooterBar = () => {
       setCompareBTNDisable(true)
     } else {
       setCompareBTNDisable(false)
+    }
+  }, [location])
+
+  useEffect(() => {
+    if (location.pathname.includes('profile')) {
+      document.querySelector('#footerBar').classList.add('hidden')
+      document.querySelector('#footerToggle').classList.add('buttonToggle')
     }
   }, [location])
 
