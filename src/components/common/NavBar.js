@@ -82,7 +82,7 @@ const NavBar = () => {
             id="favorites"
             onClick={evt => {
               evt.preventDefault()
-              history.push('/')
+              history.push('/profile')
             }}
           />
           <UserOutlined
@@ -90,7 +90,7 @@ const NavBar = () => {
             id="profile"
             onClick={evt => {
               evt.preventDefault()
-              history.push('/')
+              history.push('/profile')
             }}
           />
         </div>
