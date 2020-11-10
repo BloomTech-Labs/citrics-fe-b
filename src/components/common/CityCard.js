@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 const CityCard = props => {
   return (
     <div className="city-card">
-      <h1>{props.city.citynamestate}</h1>
+      <h2>{props.city.cityName}</h2>
     </div>
   )
 }
