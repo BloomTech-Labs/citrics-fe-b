@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Styled from 'styled-components'
-
+import ComparePlaceHolder from '../common/ComparePlaceHolder'
 import '../../styles/temp.css'
 
 const StyledFooter = Styled.div`
@@ -42,7 +42,7 @@ border-top: 1px solid #05386B;
     justify-content: space-around;
     align-items: center;
 
-    .cityPlaceholder {
+    /* .cityPlaceholder {
         background-color: #edf4e1;
         width: 30%;
         height: 90%;
@@ -50,8 +50,7 @@ border-top: 1px solid #05386B;
         display: flex;
         justify-content: center;
         align-items: center;
-        
-    }
+    } */
 }
 
 #compareBTN {
@@ -103,9 +102,12 @@ const FooterBar = () => {
         </Link>
       )}
       <div class="cityCompareContainer">
+        {/* <div class="cityPlaceholder">I be an city placholder</div>
         <div class="cityPlaceholder">I be an city placholder</div>
-        <div class="cityPlaceholder">I be an city placholder</div>
-        <div class="cityPlaceholder">I be an city placholder</div>
+        <div class="cityPlaceholder">I be an city placholder</div> */}
+        <ComparePlaceHolder />
+        <ComparePlaceHolder />
+        <ComparePlaceHolder />
       </div>
     </StyledFooter>
   )

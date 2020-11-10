@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Styled from 'styled-components'
 import StarRatingComponent from 'react-star-rating-component'
+import { useLocation } from 'react-router-dom'
 
 const StyledInput = Styled.input`
 width: 65%;
@@ -39,6 +40,7 @@ justify-content: space-evenly;
 `
 
 const SearchBar = () => {
+  const location = useLocation()
   const [search, setSearch] = useState('')
   const [open, setOpen] = useState(false)
 
@@ -53,6 +55,10 @@ const SearchBar = () => {
   // House cost min and max form state
   const [houseCostMin, setHouseCostMin] = useState(0)
   const [houseCostMax, setHouseCostMax] = useState(0)
+
+  useEffect(() => {
+    document.querySelector('#searchBar').focus()
+  }, [location])
 
   const onChange = e => {
     setSearch({
@@ -113,6 +119,7 @@ const SearchBar = () => {
         name="search"
         value={search.value}
         placeholder="Search for a city!"
+        id="searchBar"
       />
 
       <StyledButton id="dd-btn" onClick={() => toggle()}>
