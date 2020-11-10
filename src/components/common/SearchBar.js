@@ -40,70 +40,71 @@ display:flex;
 justify-content: space-evenly;
 `
 
-const SearchBar = () => {
-  const [search, setSearch] = useState('')
+const SearchBar = props => {
   const [open, setOpen] = useState(false)
 
   // Filter form state
-  const [population, setPopulation] = useState(0)
-  const [costOfLiving, setCostOfLiving] = useState()
+
+  // Population min and max form state
+
+  //   const [costOfLiving, setCostOfLiving] = useState()
 
   // Rent min and max form state
-  const [rentMin, setRentMin] = useState()
-  const [rentMax, setRentMax] = useState()
+  //   const [minRent, setRentMin] = useState(props.initialState.minRent)
+  //   const [maxRent, setRentMax] = useState(props.initialState.maxRent)
 
   // House cost min and max form state
-  const [houseCostMin, setHouseCostMin] = useState(0)
-  const [houseCostMax, setHouseCostMax] = useState(0)
+  //   const [minHouseCost, setMinHouseCost] = useState(props.initialState.minHouseCost)
+  //   const [maxHouseCost, setMaxHouseCost] = useState(props.initialState.maxHouseCost)
 
-  const onChange = e => {
-    setSearch({
-      ...search,
-      [e.target.name]: e.target.value,
-    })
-  }
+  //   const onChange = e => {
+  //     setSearch({
+  //       ...search,
+  //       [e.target.name]: e.target.value,
+  //     })
+  //   }
 
-  const populationOnChange = e => {
-    setPopulation({
-      ...population,
-      [e.target.name]: e.target.value,
-    })
-  }
+  //   const populationOnChange = e => {
+  //     setPopulation({
+  //       ...population,
+  //       [e.target.name]: e.target.value,
+  //     })
+  //   }
 
-  const costOfLivingOnChange = e => {
-    setCostOfLiving({
-      ...costOfLiving,
-      [e.target.name]: e.target.value,
-    })
-  }
+  //   const costOfLivingOnChange = e => {
+  //     setCostOfLiving({
+  //       ...costOfLiving,
+  //       [e.target.name]: e.target.value,
+  //     })
+  //   }
 
-  const rentMinOnChange = e => {
-    setRentMin({
-      ...rentMin,
-      [e.target.name]: e.target.value,
-    })
-  }
+  //   const rentMinOnChange = e => {
+  //     setRentMin({
+  //       ...rentMin,
+  //       [e.target.name]: e.target.value,
+  //     })
+  //   }
 
-  const rentMaxOnChange = e => {
-    setRentMax({
-      ...rentMax,
-      [e.target.name]: e.target.value,
-    })
-  }
+  //   const rentMaxOnChange = e => {
+  //     setRentMax({
+  //       ...rentMax,
+  //       [e.target.name]: e.target.value,
+  //     })
+  //   }
 
-  const houseCostMinOnChange = e => {
-    setHouseCostMin({
-      ...houseCostMin,
-      [e.target.name]: e.target.value,
-    })
-  }
+  //   const houseCostMinOnChange = e => {
+  //     setHouseCostMin({
+  //       ...houseCostMin,
+  //       [e.target.name]: e.target.value,
+  //     })
+  //   }
 
-  const houseCostMaxOnChange = e => {
-    setHouseCostMax({
-      ...houseCostMax,
-      [e.target.name]: e.target.value,
-    })
-  }
+  //   const houseCostMaxOnChange = e => {
+  //     setHouseCostMax({
+  //       ...houseCostMax,
+  //       [e.target.name]: e.target.value,
+  //     })
+  //   }
 
   const toggle = () => setOpen(!open)
 
@@ -111,9 +112,9 @@ const SearchBar = () => {
     <div className="searchbar-wrapper">
       <StyledInput
         type="text"
-        onChange={onChange}
-        name="search"
-        value={search.value}
+        onChange={props.onChangeHandler}
+        name="searchValue"
+        value={props.initialState.searchValue.value}
         placeholder="Search for a city!"
       />
 
@@ -127,10 +128,17 @@ const SearchBar = () => {
             <StyledH2> Population </StyledH2>
             <StyledFilterInput
               placeholder="0"
-              name="population"
+              name="minPopulation"
               type="number"
-              value={population.value}
-              onChange={populationOnChange}
+              value={props.initialState.minPopulation.value}
+              onChange={props.onChangeHandler}
+            />
+            <StyledFilterInput
+              placeholder="0"
+              name="maxPopulation"
+              type="number"
+              value={props.initialState.maxPopulation.value}
+              onChange={props.onChangeHandler}
             />
           </section>
 
@@ -142,17 +150,17 @@ const SearchBar = () => {
             <StyledH2>Rent</StyledH2>
             <StyledFilterInput
               placeholder="Min"
-              name="rentMin"
+              name="minRent"
               type="number"
-              value={rentMin.value}
-              onChange={rentMinOnChange.value}
+              value={props.initialState.minRent.value}
+              onChange={props.onChangeHandler}
             />
             <StyledFilterInput
               placeholder="Max"
-              name="rentMax"
+              name="maxRent"
               type="number"
-              value={rentMax.value}
-              onChange={rentMaxOnChange.value}
+              value={props.initialState.maxRent.value}
+              onChange={props.onChangeHandler}
             />
           </section>
 
@@ -160,17 +168,17 @@ const SearchBar = () => {
             <StyledH2>House cost</StyledH2>
             <StyledFilterInput
               placeholder="Min"
-              name="houseCostMin"
-              value={houseCostMin.value}
+              name="minHouseCost"
+              value={props.initialState.minHouseCost.value}
               type="number"
-              onChange={houseCostMinOnChange.value}
+              onChange={props.onChangeHandler}
             />
             <StyledFilterInput
               placeholder="Max"
-              name="houseCostMax"
+              name="maxHouseCost"
               type="number"
-              value={houseCostMax.value}
-              onChange={houseCostMaxOnChange.value}
+              value={props.initialState.maxHouseCost.value}
+              onChange={props.onChangeHandler}
             />
           </section>
         </StyledFilterDiv>
