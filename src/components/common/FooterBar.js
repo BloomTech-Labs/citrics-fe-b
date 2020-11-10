@@ -78,6 +78,13 @@ const FooterBar = () => {
     }
   }, [location])
 
+  useEffect(() => {
+    if (location.pathname.includes('profile')) {
+      document.querySelector('#footerBar').classList.add('hidden')
+      document.querySelector('#footerToggle').classList.add('buttonToggle')
+    }
+  }, [location])
+
   const toggleFooter = () => {
     document.querySelector('#footerBar').classList.toggle('hidden')
     document.querySelector('#footerToggle').classList.toggle('buttonToggle')
