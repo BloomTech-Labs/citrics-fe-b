@@ -14,7 +14,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
-            <UserProfile />
+            {/* <UserProfile /> */}
           </Route>
           <Route path="/compare">
             <Compare />
