@@ -4,6 +4,7 @@ import SearchBar from '../common/SearchBar'
 import CityCard from '../common/CityCard'
 import { getCities } from '../../state/actions'
 
+
 const Home = props => {
   useEffect(() => {
     props.getCities()
