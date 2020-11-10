@@ -18,6 +18,7 @@ height: 22.5vh;
 transition: all 0.8s ease-in-out;
 min-height: 175px;
 max-height: 250px;
+border-top: 1px solid #05386B;
 
 #footerToggle {
     &:hover {
@@ -31,6 +32,7 @@ max-height: 250px;
     background-color: #05386b;
     border-radius: 15px;
     transform: translateY(-20px);
+    box-shadow: 0px 0px 8px #5BDB95;
 }
 
 .cityCompareContainer {
@@ -76,9 +78,6 @@ const FooterBar = () => {
     } else {
       setCompareBTNDisable(false)
     }
-  }, [location])
-
-  useEffect(() => {
     if (location.pathname.includes('profile')) {
       document.querySelector('#footerBar').classList.add('hidden')
       document.querySelector('#footerToggle').classList.add('buttonToggle')

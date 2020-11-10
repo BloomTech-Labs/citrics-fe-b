@@ -4,7 +4,6 @@ import SearchBar from '../common/SearchBar'
 import CityCard from '../common/CityCard'
 import { getCities } from '../../state/actions'
 
-
 const Home = props => {
   useEffect(() => {
     props.getCities()
@@ -14,9 +13,9 @@ const Home = props => {
     <section>
       <SearchBar />
 
-      {props.cities.map(city => {
+      {/* {props.cities.map(city => {
         return <CityCard key={city.id} city={city} />
-      })}
+      })} */}
     </section>
   )
 }
