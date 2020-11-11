@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import Styled from 'styled-components'
-
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
+import Styled from 'styled-components'
 import StarRatingComponent from 'react-star-rating-component'
+import { useLocation } from 'react-router-dom'
 
 const StyledInput = Styled.input`
 width: 65%;
@@ -21,11 +21,8 @@ border-radius: 2px;
 color: white;
 `
 
-// Fixing git
-
 const StyledH2 = Styled.h2`
 color: #5bdb95; 
-
 `
 
 const StyledFilterInput = Styled.input`
@@ -39,72 +36,16 @@ const StyledFilterDiv = Styled.div`
 display:flex;
 justify-content: space-evenly;
 `
-
-const SearchBar = props => {
+const SearchBar = () => {
+  const location = useLocation()
   const [open, setOpen] = useState(false)
 
-  // Filter form state
 
-  // Population min and max form state
+  useEffect(() => {
+    document.querySelector('#searchBar').focus()
+  }, [location])
 
-  //   const [costOfLiving, setCostOfLiving] = useState()
-
-  // Rent min and max form state
-  //   const [minRent, setRentMin] = useState(props.initialState.minRent)
-  //   const [maxRent, setRentMax] = useState(props.initialState.maxRent)
-
-  // House cost min and max form state
-  //   const [minHouseCost, setMinHouseCost] = useState(props.initialState.minHouseCost)
-  //   const [maxHouseCost, setMaxHouseCost] = useState(props.initialState.maxHouseCost)
-
-  //   const onChange = e => {
-  //     setSearch({
-  //       ...search,
-  //       [e.target.name]: e.target.value,
-  //     })
-  //   }
-
-  //   const populationOnChange = e => {
-  //     setPopulation({
-  //       ...population,
-  //       [e.target.name]: e.target.value,
-  //     })
-  //   }
-
-  //   const costOfLivingOnChange = e => {
-  //     setCostOfLiving({
-  //       ...costOfLiving,
-  //       [e.target.name]: e.target.value,
-  //     })
-  //   }
-
-  //   const rentMinOnChange = e => {
-  //     setRentMin({
-  //       ...rentMin,
-  //       [e.target.name]: e.target.value,
-  //     })
-  //   }
-
-  //   const rentMaxOnChange = e => {
-  //     setRentMax({
-  //       ...rentMax,
-  //       [e.target.name]: e.target.value,
-  //     })
-  //   }
-
-  //   const houseCostMinOnChange = e => {
-  //     setHouseCostMin({
-  //       ...houseCostMin,
-  //       [e.target.name]: e.target.value,
-  //     })
-  //   }
-
-  //   const houseCostMaxOnChange = e => {
-  //     setHouseCostMax({
-  //       ...houseCostMax,
-  //       [e.target.name]: e.target.value,
-  //     })
-  //   }
+ 
 
   const toggle = () => setOpen(!open)
 
@@ -116,6 +57,7 @@ const SearchBar = props => {
         name="searchValue"
         value={props.initialState.searchValue.value}
         placeholder="Search for a city!"
+        id="searchBar"
       />
 
       <StyledButton id="dd-btn" onClick={() => toggle()}>
@@ -127,14 +69,14 @@ const SearchBar = props => {
           <section>
             <StyledH2> Population </StyledH2>
             <StyledFilterInput
-              placeholder="0"
+              placeholder="Min"
               name="minPopulation"
               type="number"
               value={props.initialState.minPopulation.value}
               onChange={props.onChangeHandler}
             />
             <StyledFilterInput
-              placeholder="0"
+              placeholder="Max"
               name="maxPopulation"
               type="number"
               value={props.initialState.maxPopulation.value}
@@ -194,3 +136,4 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, null)(SearchBar)
+

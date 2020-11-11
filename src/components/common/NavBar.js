@@ -11,6 +11,7 @@ background-color: #5bdb95;
 display: flex;
 justify-content: center;
 align-items: center;
+border-bottom: 1px solid #05386B;
 
 .navBarContainer {
   width: 100%;

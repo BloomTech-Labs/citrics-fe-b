@@ -4,6 +4,7 @@ import SearchBar from '../common/SearchBar'
 import CityCard from '../common/CityCard'
 import { getCities } from '../../state/actions'
 
+
 const initialState = {
   searchValue: '',
   minPopulation: 0,
@@ -32,9 +33,9 @@ const Home = props => {
     <section>
       <SearchBar onChangeHandler={onChangeHandler} initialState={state} />
 
-      {props.cities.map(city => {
+      {{props.cities.map(city => {
         return <CityCard key={city.id} city={city} />
-      })}
+      })}}
     </section>
   )
 }
@@ -45,6 +46,5 @@ const mapStateToProps = state => {
   }
 }
 
-// export default Home
 
 export default connect(mapStateToProps, { getCities })(Home)
