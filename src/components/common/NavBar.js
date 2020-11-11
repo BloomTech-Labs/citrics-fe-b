@@ -3,7 +3,7 @@ import Styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
 import { UserOutlined, HomeOutlined, HeartOutlined } from '@ant-design/icons'
 
-import SearchBar from './SearchBar';
+import SearchBar from './SearchBar'
 
 const StyledNavBar = Styled.div`
 width: 100%;
@@ -11,6 +11,7 @@ background-color: #5bdb95;
 display: flex;
 justify-content: center;
 align-items: center;
+border-bottom: 1px solid #05386B;
 
 .navBarContainer {
   width: 100%;
@@ -73,8 +74,8 @@ const NavBar = () => {
             className="NavItem"
             id="home"
             onClick={evt => {
-              evt.preventDefault();
-              history.push('/');
+              evt.preventDefault()
+              history.push('/')
             }}
           />
           <HeartOutlined
