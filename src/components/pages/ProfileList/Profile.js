@@ -1,7 +1,7 @@
 import React from 'react'
 import { CardBody, CardTitle, CardText, CardImg } from 'reactstrap'
 import { Link } from 'react-router-dom'
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 
 function UserProfile(props) {
   const { item } = props

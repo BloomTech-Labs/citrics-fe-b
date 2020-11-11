@@ -21,7 +21,7 @@
     --color-text: black;
     --color-background: white;
     --color-background-header: var(--color-green);
-    --color-border: var(--ajw-black);
+    --color-border: black;
   }
 
   .dark-mode{
