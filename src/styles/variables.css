@@ -5,8 +5,46 @@
   --font-primary: 'Tajawal', sans-serif;
 
   /* colors */
-  --color-blue: #05386B;
+  --color-primary-blue: #05386B;
+  --color-secondary-blue: #21476d;
   --color-green: #5BDB95;
   --color-off-white: #EDF4E1;
+
+  --color-chart-one: #F15BB5;
+  --color-chart-two: #00BBF9;
+  --color-chart-three: #FFC15E;
+
 }
 
+@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
+  body {
+    --color-text: black;
+    --color-background: white;
+    --color-background-header: var(--color-green);
+    --color-border: var(--ajw-black);
+  }
+
+  .dark-mode{
+    --color-text: var(--color-off-white);
+    --color-background: var(--color-secondary-blue);
+    --color-background-header: var(--color-primary-blue);
+    --color-border: var(--color-off-white);
+  }
+
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --color-text: var(--color-off-white);
+    --color-background: var(--color-secondary-blue);
+    --color-background-header: var(--color-primary-blue);
+    --color-border: var(--color-off-white);
+  }
+
+  .light-mode{
+    --color-text: var(--ajw-black);
+    --color-background: white;
+    --color-background-header: var(--ajw-white);
+    --color-border: var(--ajw-black);
+  }
+}

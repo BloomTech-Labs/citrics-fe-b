@@ -7,9 +7,11 @@ import { useLocation } from 'react-router-dom'
 const StyledInput = Styled.input`
 width: 65%;
 border: none;
+border-radius: 10px;
 height: 4em;
 margin: 40px 60px;
 font-size: 15px;
+border: 1px solid #05386B;
 `
 
 const StyledButton = Styled.button`
@@ -36,6 +38,7 @@ const StyledFilterDiv = Styled.div`
 display:flex;
 justify-content: space-evenly;
 `
+
 const SearchBar = () => {
   const location = useLocation()
   const [open, setOpen] = useState(false)
@@ -45,7 +48,6 @@ const SearchBar = () => {
     document.querySelector('#searchBar').focus()
   }, [location])
 
- 
 
   const toggle = () => setOpen(!open)
 
