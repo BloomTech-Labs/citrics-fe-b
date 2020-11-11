@@ -41,16 +41,6 @@ border-top: 1px solid #05386B;
     width: 75%;
     justify-content: space-around;
     align-items: center;
-
-    /* .cityPlaceholder {
-        background-color: #edf4e1;
-        width: 30%;
-        height: 90%;
-        border-radius: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    } */
 }
 
 #compareBTN {
@@ -70,7 +60,9 @@ border-top: 1px solid #05386B;
 
 const FooterBar = () => {
   const [compareBTNDisable, setCompareBTNDisable] = useState(false)
+
   let location = useLocation()
+
   useEffect(() => {
     if (location.pathname.includes('compare')) {
       setCompareBTNDisable(true)
@@ -80,6 +72,10 @@ const FooterBar = () => {
     if (location.pathname.includes('profile')) {
       document.querySelector('#footerBar').classList.add('hidden')
       document.querySelector('#footerToggle').classList.add('buttonToggle')
+    }
+    if (location.pathname == '/') {
+      document.querySelector('#footerBar').classList.remove('hidden')
+      document.querySelector('#footerToggle').classList.remove('buttonToggle')
     }
   }, [location])
 
@@ -102,9 +98,6 @@ const FooterBar = () => {
         </Link>
       )}
       <div class="cityCompareContainer">
-        {/* <div class="cityPlaceholder">I be an city placholder</div>
-        <div class="cityPlaceholder">I be an city placholder</div>
-        <div class="cityPlaceholder">I be an city placholder</div> */}
         <ComparePlaceHolder />
         <ComparePlaceHolder />
         <ComparePlaceHolder />
