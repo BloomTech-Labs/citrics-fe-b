@@ -19,6 +19,7 @@ const initialApplicationState = {
 
   userPreferences: {
     favorites: [],
+    compareHistory: [],
   },
 }
 
