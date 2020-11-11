@@ -15,7 +15,69 @@ const initialState = {
 }
 
 const mockCityData = [
-  { cityName: 'Seattle, WA', cityId: 20, population: 500000 },
+  {
+    cityName: 'Seattle, WA',
+    cityId: 20,
+    population: 3000000,
+    rentRate: 1500,
+    medIncome: 55000,
+  },
+  {
+    cityName: 'Portland, OR',
+    cityId: 21,
+    population: 2500000,
+    rentRate: 1500,
+    medIncome: 55000,
+  },
+  {
+    cityName: 'Los Angeles, CA',
+    cityId: 22,
+    population: 7000000,
+    rentRate: 1500,
+    medIncome: 55000,
+  },
+  {
+    cityName: 'San Francisco, CA',
+    cityId: 23,
+    population: 5000000,
+    rentRate: 1500,
+    medIncome: 55000,
+  },
+  {
+    cityName: 'Detroit, MI',
+    cityId: 24,
+    population: 5000000,
+    rentRate: 1500,
+    medIncome: 55000,
+  },
+  {
+    cityName: 'Orlando, FL',
+    cityId: 25,
+    population: 4500000,
+    rentRate: 1500,
+    medIncome: 55000,
+  },
+  {
+    cityName: 'Orlando, FL',
+    cityId: 25,
+    population: 4500000,
+    rentRate: 1500,
+    medIncome: 55000,
+  },
+  {
+    cityName: 'Orlando, FL',
+    cityId: 25,
+    population: 4500000,
+    rentRate: 1500,
+    medIncome: 55000,
+  },
+  {
+    cityName: 'Orlando, FL',
+    cityId: 25,
+    population: 4500000,
+    rentRate: 1500,
+    medIncome: 55000,
+  },
 ]
 
 const Home = props => {
