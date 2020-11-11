@@ -39,15 +39,13 @@ display:flex;
 justify-content: space-evenly;
 `
 
-const SearchBar = () => {
+const SearchBar = props => {
   const location = useLocation()
   const [open, setOpen] = useState(false)
-
 
   useEffect(() => {
     document.querySelector('#searchBar').focus()
   }, [location])
-
 
   const toggle = () => setOpen(!open)
 
@@ -138,4 +136,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, null)(SearchBar)
-
