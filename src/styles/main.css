@@ -8,12 +8,17 @@
 
 }
 
-.city-card-area {
+.city-card-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin: 0 auto;
 }
 
 .city-card {
-
+    max-width: 300px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px; 
 }

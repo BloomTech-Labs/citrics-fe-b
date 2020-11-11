@@ -4,7 +4,6 @@ import SearchBar from '../common/SearchBar'
 import CityCard from '../common/CityCard'
 import { getCities } from '../../state/actions'
 
-
 const initialState = {
   searchValue: '',
   minPopulation: 0,
@@ -14,6 +13,10 @@ const initialState = {
   minHouseCost: 0,
   maxHouseCost: 0,
 }
+
+const mockCityData = [
+  { cityName: 'Seattle, WA', cityId: 20, population: 500000 },
+]
 
 const Home = props => {
   useEffect(() => {
@@ -33,9 +36,14 @@ const Home = props => {
     <section>
       <SearchBar onChangeHandler={onChangeHandler} initialState={state} />
 
-      {{props.cities.map(city => {
-        return <CityCard key={city.id} city={city} />
-      })}}
+      <div className="city-card-container">
+        {mockCityData.map(city => {
+          return <CityCard key={city.cityId} city={city} />
+        })}
+        {/* {props.cities.map(city => {
+          return <CityCard key={city.id} city={city} />
+        })} */}
+      </div>
     </section>
   )
 }
@@ -45,6 +53,5 @@ const mapStateToProps = state => {
     cities: state.cities,
   }
 }
-
 
 export default connect(mapStateToProps, { getCities })(Home)
