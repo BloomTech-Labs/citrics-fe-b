@@ -3,6 +3,9 @@ import { Link, useLocation } from 'react-router-dom'
 import Styled from 'styled-components'
 import ComparePlaceHolder from '../common/ComparePlaceHolder'
 import '../../styles/temp.css'
+import { PropertySafetyFilled } from '@ant-design/icons'
+import CityCard from './CityCard'
+import { connect } from 'react-redux'
 
 const StyledFooter = Styled.div`
 display: flex;
@@ -14,16 +17,17 @@ position: fixed;
 z-index: 999;
 bottom: 0;
 background-color: #5bdb95;
-height: 22.5vh;
+/* height: 22.5vh; */
 transition: all 0.8s ease-in-out;
-min-height: 175px;
-max-height: 250px;
+/* min-height: 175px;
+max-height: 300px; */
 border-top: 1px solid #05386B;
 
 #footerToggle {
     &:hover {
         cursor: url(hand.cur), pointer;
     }
+    z-index: 999;
     height: 12px;
     width: 75px;
     font-size: 4rem;
@@ -31,7 +35,7 @@ border-top: 1px solid #05386B;
     padding: 0;
     background-color: #05386b;
     border-radius: 15px;
-    transform: translateY(-20px);
+    transform: translateY(-25px);
     box-shadow: 0px 0px 8px #5BDB95;
 }
 
@@ -41,16 +45,6 @@ border-top: 1px solid #05386B;
     width: 75%;
     justify-content: space-around;
     align-items: center;
-
-    /* .cityPlaceholder {
-        background-color: #edf4e1;
-        width: 30%;
-        height: 90%;
-        border-radius: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    } */
 }
 
 #compareBTN {
@@ -65,12 +59,15 @@ border-top: 1px solid #05386B;
     color: #edf4e1;
     font-size: 1.2rem;
     background-color: #05386b;
+    display: flex:
 }
 `
 
-const FooterBar = () => {
+const FooterBar = props => {
   const [compareBTNDisable, setCompareBTNDisable] = useState(false)
+
   let location = useLocation()
+
   useEffect(() => {
     if (location.pathname.includes('compare')) {
       setCompareBTNDisable(true)
@@ -81,9 +78,13 @@ const FooterBar = () => {
       document.querySelector('#footerBar').classList.add('hidden')
       document.querySelector('#footerToggle').classList.add('buttonToggle')
     }
+    if (location.pathname == '/') {
+      document.querySelector('#footerBar').classList.remove('hidden')
+      document.querySelector('#footerToggle').classList.remove('buttonToggle')
+    }
   }, [location])
 
-  const toggleFooter = () => {
+  const toggleFooter = props => {
     document.querySelector('#footerBar').classList.toggle('hidden')
     document.querySelector('#footerToggle').classList.toggle('buttonToggle')
   }
@@ -102,15 +103,39 @@ const FooterBar = () => {
         </Link>
       )}
       <div class="cityCompareContainer">
-        {/* <div class="cityPlaceholder">I be an city placholder</div>
-        <div class="cityPlaceholder">I be an city placholder</div>
-        <div class="cityPlaceholder">I be an city placholder</div> */}
-        <ComparePlaceHolder />
-        <ComparePlaceHolder />
-        <ComparePlaceHolder />
+        {props.comparingCities.length >= 1 ? (
+          <CityCard
+            key={props.comparingCities[0].cityId}
+            city={props.comparingCities[0]}
+          />
+        ) : (
+          <ComparePlaceHolder />
+        )}
+        {props.comparingCities.length >= 2 ? (
+          <CityCard
+            key={props.comparingCities[1].cityId}
+            city={props.comparingCities[1]}
+          />
+        ) : (
+          <ComparePlaceHolder />
+        )}
+        {props.comparingCities.length >= 3 ? (
+          <CityCard
+            key={props.comparingCities[2].cityId}
+            city={props.comparingCities[2]}
+          />
+        ) : (
+          <ComparePlaceHolder />
+        )}
       </div>
     </StyledFooter>
   )
 }
 
-export default FooterBar
+const mapStateToProps = state => {
+  return {
+    comparingCities: state.comparingCities,
+  }
+}
+
+export default connect(mapStateToProps, {})(FooterBar)
