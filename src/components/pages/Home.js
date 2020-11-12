@@ -100,7 +100,7 @@ const Home = props => {
 
       <div className="city-card-container">
         {mockCityData.map(city => {
-          return <CityCard key={city.cityId} city={city} />
+          return <CityCard key={city.cityId} city={city} compare={false} />
         })}
         {/* {props.cities.map(city => {
           return <CityCard key={city.id} city={city} />
