@@ -20,10 +20,13 @@ const CityCard = props => {
           props.cityToCompare(props.city.cityId)
         }}
       >
-        <h2>{props.city.cityName}</h2>
+        <h2>
+          {props.city.cityName}, {props.city.stateCode}
+        </h2>
         <p>Population: {formatLongNum(props.city.population)}</p>
-        <p>Avg. Rent (1BR): {formatCurrency(props.city.rentRate)}</p>
-        <p>Median Income: {formatCurrency(props.city.medIncome)}</p>
+        <p>Rent: {formatCurrency(props.city.rent)}</p>
+        <p>House Cost: {formatCurrency(props.city.averageHomeCost)}</p>
+        <p>Cost of Living Index: {props.city.costOfLivingIndex}</p>
       </div>
     )
   } else {
@@ -38,10 +41,13 @@ const CityCard = props => {
         >
           x
         </button>
-        <h2>{props.city.cityName}</h2>
+        <h2>
+          {props.city.cityName}, {props.city.stateCode}
+        </h2>
         <p>Population: {formatLongNum(props.city.population)}</p>
-        <p>Avg. Rent (1BR): {formatCurrency(props.city.rentRate)}</p>
-        <p>Median Income: {formatCurrency(props.city.medIncome)}</p>
+        <p>Rent: {props.city.rent}</p>
+        <p>House Cost: {props.city.averageHomeCost}</p>
+        <p>Cost of Living Index: {props.city.costOfLivingIndex}</p>
       </div>
     )
   }

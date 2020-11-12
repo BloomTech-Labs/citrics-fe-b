@@ -1,4 +1,3 @@
-import { Switch } from 'antd'
 import React from 'react'
 import { Route } from 'react-router-dom'
 import CompareNav from '../common/CompareNav'
