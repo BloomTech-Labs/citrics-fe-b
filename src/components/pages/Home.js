@@ -36,11 +36,8 @@ const Home = props => {
       <SearchBar onChangeHandler={onChangeHandler} initialState={state} />
 
       <div className="city-card-container">
-        {/* {mockCityData.map(city => {
-          return <CityCard key={city.cityId} city={city} />
-        })} */}
         {props.cities.map(city => {
-          return <CityCard key={city.id} city={city} />
+          return <CityCard key={city.id} city={city} compare={false} />
         })}
       </div>
     </section>
