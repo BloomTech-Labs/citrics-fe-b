@@ -29,10 +29,32 @@
     cursor: pointer;
     transition-property: box-shadow;
     transition-duration: .5s;
+    position: relative;
 
     height: 170px;
 }
 
 .city-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+
+.removeCardFromCompare {
+    position: absolute;
+    background: red;
+    color: white;
+    top: -10px;
+    right: -10px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+    border: none;
+    color: black;
+}
+
+.removeCardFromCompare:hover {
+    transition-duration: .5s;
+    transform: scale(1.1);
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }

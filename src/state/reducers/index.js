@@ -5,6 +5,7 @@ import {
   REMOVE_CITY_COMPARE,
   MOVE_CITY_COMPARE,
   MOVE_CITY_ERROR,
+  REMOVE_CITY_TO_COMPARE,
 } from '../actions'
 
 const initialApplicationState = {
@@ -29,7 +30,7 @@ const initialApplicationState = {
     },
     {
       cityName: 'Seattle, WA',
-      cityId: 20,
+      cityId: 22,
       population: 3000000,
       rentRate: 1500,
       medIncome: 55000,
@@ -77,6 +78,14 @@ export default function reducer(state = initialApplicationState, action) {
       }
     case MOVE_CITY_ERROR:
       return { ...state, errorMessage: action.payload }
+    case REMOVE_CITY_TO_COMPARE:
+      return {
+        ...state,
+        comparingCities: state.comparingCities.filter(city => {
+          return city.cityId != action.payload
+        }),
+      }
+
     default:
       return state
   }
