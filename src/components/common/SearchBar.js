@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Styled from 'styled-components'
 import StarRatingComponent from 'react-star-rating-component'
 import { useLocation } from 'react-router-dom'
+import SimpleSelect from './SelectComponent'
 
 const StyledInput = Styled.input`
 width: 65%;
@@ -68,7 +69,7 @@ const SearchBar = props => {
         <StyledFilterDiv>
           <section>
             <StyledH2> Population </StyledH2>
-            <StyledFilterInput
+            {/* <StyledFilterInput
               placeholder="Min"
               name="minPopulation"
               type="number"
@@ -81,6 +82,13 @@ const SearchBar = props => {
               type="number"
               value={props.initialState.maxPopulation.value}
               onChange={props.onChangeHandler}
+            /> */}
+            <SimpleSelect
+              onChange={props.onChangeHandler}
+              min={props.initialState.minPopulation.value}
+              max={props.initialState.maxPopulation.value}
+              minName="minPopulation"
+              maxName="maxPopulation"
             />
           </section>
 
@@ -90,7 +98,7 @@ const SearchBar = props => {
           </section>
           <section>
             <StyledH2>Rent</StyledH2>
-            <StyledFilterInput
+            {/* <StyledFilterInput
               placeholder="Min"
               name="minRent"
               type="number"
@@ -103,12 +111,19 @@ const SearchBar = props => {
               type="number"
               value={props.initialState.maxRent.value}
               onChange={props.onChangeHandler}
+            /> */}
+            <SimpleSelect
+              onChange={props.onChangeHandler}
+              min={props.initialState.minRent.value}
+              max={props.initialState.maxRent.value}
+              minName="minRent"
+              maxName="maxRent"
             />
           </section>
 
           <section>
             <StyledH2>House cost</StyledH2>
-            <StyledFilterInput
+            {/* <StyledFilterInput
               placeholder="Min"
               name="minHouseCost"
               value={props.initialState.minHouseCost.value}
@@ -121,6 +136,13 @@ const SearchBar = props => {
               type="number"
               value={props.initialState.maxHouseCost.value}
               onChange={props.onChangeHandler}
+            /> */}
+            <SimpleSelect
+              onChange={props.onChangeHandler}
+              min={props.initialState.minHouseCost.value}
+              max={props.initialState.maxHouseCost.value}
+              minName="minHouseCost"
+              maxName="maxHouseCost"
             />
           </section>
         </StyledFilterDiv>
