@@ -1,6 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { cityToCompare, removeCityFromCompare } from '../../state/actions'
+import {
+  HeartOutlined,
+  HeartFilled,
+  InfoCircleOutlined,
+} from '@ant-design/icons'
 
 function formatLongNum(num) {
   return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
@@ -24,6 +29,7 @@ const CityCard = props => {
           <h3 className="city-name">
             {props.city.cityName}, {props.city.stateCode}
           </h3>
+          <HeartOutlined />
         </div>
         <div className="city-attributes">
           <p>Population: {formatLongNum(props.city.population)}</p>

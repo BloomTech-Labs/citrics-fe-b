@@ -22,6 +22,7 @@
 
 //components
 .city-card {
+    color: var(--color-off-white);
     width: 300px;
     display: flex;
     flex-direction: column;
@@ -41,6 +42,10 @@
         padding: 5px 20px;
         border-top-left-radius: 9px;
         border-top-right-radius: 9px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
 
         h3{
             font-size: 1.2rem;
@@ -50,6 +55,7 @@
 
     .city-attributes{
         padding: 5px 20px;
+        color: var(--color-primary-blue)
     }
 
     &:hover {
@@ -60,7 +66,7 @@
 
 .removeCardFromCompare {
     position: absolute;
-    background: red;
+    background: var(--color-primary-blue);
     color: white;
     top: -10px;
     right: -10px;
