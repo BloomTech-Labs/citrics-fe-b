@@ -15,27 +15,7 @@ const initialApplicationState = {
   compareErrorMessage: null,
   cities: [],
 
-  // comparingCities: {
-  //   cityOne: {},
-  //   cityTwo: {},
-  //   cityThree: {},
-  // },
-  comparingCities: [
-    {
-      cityName: 'Seattle, WA',
-      cityId: 20,
-      population: 3000000,
-      rentRate: 1500,
-      medIncome: 55000,
-    },
-    {
-      cityName: 'Seattle, WA',
-      cityId: 22,
-      population: 3000000,
-      rentRate: 1500,
-      medIncome: 55000,
-    },
-  ],
+  comparingCities: [],
 
   userPreferences: {
     favorites: [],
