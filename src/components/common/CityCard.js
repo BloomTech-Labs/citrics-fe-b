@@ -66,6 +66,7 @@ const CityCard = props => {
 const mapStateToProps = state => {
   return {
     cities: state.cities,
+    comparingCities: state.comparingCities,
   }
 }
 
