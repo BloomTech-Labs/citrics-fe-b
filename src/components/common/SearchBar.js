@@ -60,29 +60,13 @@ const SearchBar = props => {
         placeholder="Search for a city!"
         id="searchBar"
       />
-
       <StyledButton id="dd-btn" onClick={() => toggle()}>
         Filters
       </StyledButton>
-
       {open ? (
         <StyledFilterDiv>
           <section>
             <StyledH2> Population </StyledH2>
-            {/* <StyledFilterInput
-              placeholder="Min"
-              name="minPopulation"
-              type="number"
-              value={props.initialState.minPopulation.value}
-              onChange={props.onChangeHandler}
-            />
-            <StyledFilterInput
-              placeholder="Max"
-              name="maxPopulation"
-              type="number"
-              value={props.initialState.maxPopulation.value}
-              onChange={props.onChangeHandler}
-            /> */}
             <SimpleSelect
               onChange={props.onChangeHandler}
               min={props.initialState.minPopulation.value}
@@ -98,20 +82,6 @@ const SearchBar = props => {
           </section>
           <section>
             <StyledH2>Rent</StyledH2>
-            {/* <StyledFilterInput
-              placeholder="Min"
-              name="minRent"
-              type="number"
-              value={props.initialState.minRent.value}
-              onChange={props.onChangeHandler}
-            />
-            <StyledFilterInput
-              placeholder="Max"
-              name="maxRent"
-              type="number"
-              value={props.initialState.maxRent.value}
-              onChange={props.onChangeHandler}
-            /> */}
             <SimpleSelect
               onChange={props.onChangeHandler}
               min={props.initialState.minRent.value}
@@ -123,20 +93,6 @@ const SearchBar = props => {
 
           <section>
             <StyledH2>House cost</StyledH2>
-            {/* <StyledFilterInput
-              placeholder="Min"
-              name="minHouseCost"
-              value={props.initialState.minHouseCost.value}
-              type="number"
-              onChange={props.onChangeHandler}
-            />
-            <StyledFilterInput
-              placeholder="Max"
-              name="maxHouseCost"
-              type="number"
-              value={props.initialState.maxHouseCost.value}
-              onChange={props.onChangeHandler}
-            /> */}
             <SimpleSelect
               onChange={props.onChangeHandler}
               min={props.initialState.minHouseCost.value}
