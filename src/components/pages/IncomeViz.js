@@ -1,9 +1,13 @@
 import React from 'react'
+import Plotly from '../common/Plotly'
 
-const IncomeViz = () => {
+const IncomeViz = props => {
   return (
     <div>
-      <h1>Hello from the AVG income page yo</h1>
+      <Plotly
+        data={props.comparingCities}
+        graphLabel="Average Household Income"
+      />
     </div>
   )
 }
