@@ -13,6 +13,8 @@ import {
   HeartOutlined,
   HeartFilled,
   InfoCircleOutlined,
+  PlusOutlined,
+  CloseOutlined,
 } from '@ant-design/icons'
 
 const CityCard = props => {
@@ -37,18 +39,18 @@ const CityCard = props => {
 
   if (props.compare === false) {
     return (
-      <div
-        className="city-card search-card"
-        onClick={e => {
-          e.preventDefault()
-          props.cityToCompare(props.city.cityId)
-        }}
-      >
+      <div className="city-card search-card">
+        <PlusOutlined
+          className="card-button add"
+          onClick={e => {
+            e.preventDefault()
+            props.cityToCompare(props.city.cityId)
+          }}
+        />
         <div className="city-card-header">
           <h3 className="city-name">
             {props.city.cityName}, {props.city.stateCode}
           </h3>
-
           {isFavorite ? (
             <HeartFilled onClick={toggleFavorite} />
           ) : (
@@ -66,15 +68,14 @@ const CityCard = props => {
   } else {
     return (
       <div className="city-card">
-        <button
-          className="removeCardFromCompare"
+        <CloseOutlined
+          className="card-button remove"
           onClick={e => {
             e.preventDefault()
             props.removeCityFromCompare(props.city.cityId)
           }}
-        >
-          x
-        </button>
+        />
+
         <div className="city-card-header">
           <h3 className="city-name">
             {props.city.cityName}, {props.city.stateCode}
