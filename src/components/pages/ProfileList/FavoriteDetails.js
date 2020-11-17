@@ -5,11 +5,13 @@ import { Button, Form, Label, Input, Row, Col } from 'reactstrap';
 
 
 
-export default function FavoriteDetails() {
-  const [post, setPost] = useState();
-  const [edit, setEdit] = useState(false);
-  const { id } = useParams();
-  const history = useHistory();
+
+export default function FavoriteDetails(props) {
+  const {user} = props;
+  //const [post, setPost] = useState();
+  //const [edit, setEdit] = useState(false);
+  //const { id } = useParams();
+  /*const history = useHistory();
   useEffect(() => {
     axiosWithAuth()
       .get(`/users/user/${id}`)
@@ -19,7 +21,7 @@ export default function FavoriteDetails() {
       .catch((err) => console.log(err));
   }, [id]);
   console.log(post);
-  /*const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     axiosWithAuth()
       .put(`/api/posts/${id}`, post)
@@ -46,11 +48,11 @@ export default function FavoriteDetails() {
     return null
   }
   return (
-    <div className='PhotoDetails'>
+    <div className='FavoriteDetails'>
       <div className='details'>
-      <h2>{post.title}</h2>
-      <p className='postDescription'>{post.description}</p>
-      <p className='postLocation'>{post.location}</p>
+     
+      <p className='postDescription'>{user.favoriteCities}</p>
+      
       {/*{!edit && <Button onClick={() => setEdit(true)}>Edit Post</Button>}
       {edit && (
         
@@ -90,7 +92,7 @@ export default function FavoriteDetails() {
         </Form>
       )} */}
       </div>
-      <img top width="100%" src={post.photo_url} alt={post.title}/>
+      
 
     </div>
   )
