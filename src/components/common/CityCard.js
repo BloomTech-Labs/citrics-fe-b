@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import {
   cityToCompare,
@@ -6,22 +6,23 @@ import {
   removeFavorite,
   addFavorite,
 } from '../../state/actions'
+
+import { formatLongNum, formatCurrency } from '../../helper/formatNumbers'
+
 import {
   HeartOutlined,
   HeartFilled,
   InfoCircleOutlined,
 } from '@ant-design/icons'
 
-function formatLongNum(num) {
-  return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
-}
-
-function formatCurrency(num) {
-  return '$' + num.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
-}
-
 const CityCard = props => {
   const [isFavorite, setFavorite] = useState(false)
+
+  useEffect(() => {
+    if (props.favorites.includes(props.city.cityid)) {
+      setFavorite(true)
+    }
+  }, [])
 
   const toggleFavorite = e => {
     e.stopPropagation()
@@ -95,6 +96,7 @@ const mapStateToProps = state => {
   return {
     cities: state.cities,
     comparingCities: state.comparingCities,
+    favorites: state.userPreferences.favorites,
   }
 }
 

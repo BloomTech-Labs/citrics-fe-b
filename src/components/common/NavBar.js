@@ -18,13 +18,20 @@ border-bottom: 1px solid #05386B;
   justify-content: space-between;
   align-items: center;
 
+  .logo {
+    display: flex;
+    flex-direction: row;
+  }
+
   img {
-    width: 200px;
-    &:hover {
-      transition: all 0.4s ease-in-out;
-      transform: scale(1.1);
-      cursor: url(hand.cur), pointer;
-    }
+    width: 40px;
+    height: 50px;
+    verticle-align: middle;
+    // &:hover {
+    //   transition: all 0.4s ease-in-out;
+    //   transform: scale(1.1);
+    //   cursor: url(hand.cur), pointer;
+    // }
   }
       #NavItems {
         height: 100%;
@@ -58,14 +65,17 @@ const NavBar = () => {
   return (
     <StyledNavBar>
       <div className="navBarContainer">
-        <img
-          src={require('../../images/citrics.png')}
-          alt="citrics logo and name"
-          onClick={evt => {
-            evt.preventDefault()
-            history.push('/')
-          }}
-        />
+        <div className="logo">
+          <h1>CITRICS</h1>
+          <img
+            src={require('../../images/citrics.png')}
+            alt="citrics logo and name"
+            onClick={evt => {
+              evt.preventDefault()
+              history.push('/')
+            }}
+          />
+        </div>
 
         <div id="NavItems">
           <HomeOutlined
