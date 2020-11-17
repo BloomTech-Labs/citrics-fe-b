@@ -35,10 +35,7 @@ const Home = props => {
     if (initialState.minPopulation > 0 && initialState.maxPopulation > 0) {
       setDisplayCities(
         props.cities.filter(city => {
-          return (
-            city.population >= initialState.minPopulation &&
-            city.population <= initialState.maxPopulation
-          )
+          return (city.population >= initialState.minPopulation && city.population <= initialState.maxPopulation)
         })
       )
     }
