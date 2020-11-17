@@ -7,8 +7,8 @@ import { getCLIArray } from '../../helper/dataProperties'
 
 const initialState = {
   searchValue: '',
-  minPopulation: 0,
-  maxPopulation: 0,
+  minPopulation: 50000,
+  maxPopulation: 1000000,
   minRent: 0,
   maxRent: 0,
   minHouseCost: 0,
@@ -21,12 +21,27 @@ const Home = props => {
   }, [])
 
   const [state, setState] = useState(initialState)
+  const [displayCities, setDisplayCities] = useState(props.cities)
+
+  useEffect(() => {
+    setDisplayCities(props.cities)
+  }, [props.cities])
 
   const onChangeHandler = e => {
     setState({
       ...state,
       [e.target.name]: e.target.value,
     })
+    if (initialState.minPopulation > 0 && initialState.maxPopulation > 0) {
+      setDisplayCities(
+        props.cities.filter(city => {
+          return (
+            city.population >= initialState.minPopulation &&
+            city.population <= initialState.maxPopulation
+          )
+        })
+      )
+    }
   }
 
   props.cities.sort()
@@ -36,7 +51,7 @@ const Home = props => {
       <SearchBar onChangeHandler={onChangeHandler} initialState={state} />
 
       <div className="city-card-container">
-        {props.cities.map(city => {
+        {displayCities.map(city => {
           return <CityCard key={city.id} city={city} compare={false} />
         })}
       </div>

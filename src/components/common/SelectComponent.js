@@ -38,8 +38,10 @@ export default function SimpleSelect(props) {
             <em>Min</em>
           </MenuItem>
           <MenuItem value={50000}>50K</MenuItem>
-          <MenuItem value={60000}>60K</MenuItem>
-          <MenuItem value={70000}>70k</MenuItem>
+          <MenuItem value={75000}>75K</MenuItem>
+          <MenuItem value={100000}>100k</MenuItem>
+          <MenuItem value={250000}>250k</MenuItem>
+          <MenuItem value={500000}>500K</MenuItem>
         </Select>
       </FormControl>
       <FormControl variant="filled" className={classes.formControl}>
@@ -55,8 +57,10 @@ export default function SimpleSelect(props) {
             <em>None</em>
           </MenuItem>
           <MenuItem value={100000}>100K</MenuItem>
-          <MenuItem value={150000}>150K</MenuItem>
-          <MenuItem value={200000}>200K</MenuItem>
+          <MenuItem value={250000}>250K</MenuItem>
+          <MenuItem value={500000}>500K</MenuItem>
+          <MenuItem value={750000}>750K</MenuItem>
+          <MenuItem value={1000000}>1M</MenuItem>
         </Select>
       </FormControl>
     </div>
