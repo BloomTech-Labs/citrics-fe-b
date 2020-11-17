@@ -1,0 +1,22 @@
+.hidden {
+    transition: all 0.8s ease-in-out;
+    transform: translateY(100%);
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.buttonToggle {
+    transition: all 1s ease-in-out;
+    transform: translateY(-30px);
+}
+
+.selected {
+    transition: all 0.5s ease-in-out;
+    padding: 1rem;
+    width: 25%;
+    border: 1px solid black;
+    text-align: center;
+    text-decoration: none;
+    color: #edf4e1 !important;
+    background-color:#05386b !important;
+}

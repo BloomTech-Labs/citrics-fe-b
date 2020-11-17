@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5%;
+    color: @c-white;
+    border-radius: @sty-border-radius-medium;
+    background: @c-subtle-panel-gradient;
+
+
+    .cardInfo {
+        display: flex;
+        align-items: center;
+        height: 10%;
+        padding: 1%;
+        position: relative;
+
+        .plotlyName {
+            align-self: center;
+            margin: 0 1%;
+            color: @c-white;
+        }
+
+        .antdSwitch {
+            position: absolute;
+            right: 20px;
+        }
+    }
+    
+    .plotContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding-left: 2%;
+        padding-bottom: 2%;
+    }
+
+} 
