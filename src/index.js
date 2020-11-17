@@ -7,7 +7,7 @@ import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 
 import App from './App'
-import './styles/index.css'
+import './styles/index.scss'
 
 import reducer from './state/reducers'
 

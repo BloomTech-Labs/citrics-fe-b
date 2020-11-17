@@ -21,25 +21,20 @@ const Home = props => {
   }, [])
 
   const [state, setState] = useState(initialState)
-  const [displayCities, setDisplayCities] = useState(props.cities)
-
-  useEffect(() => {
-    setDisplayCities(props.cities)
-  }, [props.cities])
-
   const onChangeHandler = e => {
     setState({
       ...state,
       [e.target.name]: e.target.value,
     })
-    if (initialState.minPopulation > 0 && initialState.maxPopulation > 0) {
-      setDisplayCities(
-        props.cities.filter(city => {
-          return (city.population >= initialState.minPopulation && city.population <= initialState.maxPopulation)
-        })
-      )
-    }
   }
+
+  useEffect(() => {
+    var compareIds = []
+    props.comparingCities.forEach(city => {
+      compareIds.push(city.cityId)
+      setComparisons(compareIds)
+    })
+  }, [props.comparingCities])
 
   props.cities.sort()
 
@@ -48,7 +43,11 @@ const Home = props => {
       <SearchBar onChangeHandler={onChangeHandler} initialState={state} />
 
       <div className="city-card-container">
-        {displayCities.map(city => {
+        {
+        props.cities.filter(city =>{
+          return state.minPopulation > 0 && state.maxPopulation > 0 &&city.population >= initialState.minPopulation && city.population <= initialState.maxPopulation 
+          })
+        .map(city => {
           return <CityCard key={city.id} city={city} compare={false} />
         })}
       </div>
@@ -59,6 +58,7 @@ const Home = props => {
 const mapStateToProps = state => {
   return {
     cities: state.cities,
+    comparingCities: state.comparingCities,
   }
 }
 
