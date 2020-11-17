@@ -19,6 +19,9 @@ a {
     padding: 1rem;
     width: 25%;
     border-right: 2px solid #edf4e1;
+    border-left: none;
+    border-top: none; 
+    border-bottom: none;
     &:last-child {
         border: none;
     }
