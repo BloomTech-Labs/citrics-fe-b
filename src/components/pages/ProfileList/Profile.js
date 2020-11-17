@@ -1,10 +1,17 @@
 import React from 'react'
 import { CardBody, CardTitle, CardText, CardImg } from 'reactstrap'
-import { Link } from 'react-router-dom'
 // import 'bootstrap/dist/css/bootstrap.min.css'
+import { getUserData} from '../../../state/actions/index.js';
+import { connect } from 'react-redux';
+import UserPreferencesList from './UserPreferencesList'
+import FavoritesList from './FavoritesList'
+
 
 function UserProfile(props) {
-  const { item } = props
+  const { user } = props;
+  if (user == null) {
+    return null;
+  }
   return (
     <div
       class="body"
@@ -50,7 +57,8 @@ function UserProfile(props) {
       >
         <CardBody alignItems="center">
           <CardTitle tag="h2"> User Preferences </CardTitle>
-          <CardText> </CardText>
+          <CardText> <UserPreferencesList /> 
+          </CardText>
         </CardBody>
       </div>
 
@@ -69,7 +77,7 @@ function UserProfile(props) {
       >
         <CardBody alignItems="center">
           <CardTitle tag="h2"> About Me </CardTitle>
-          <CardText> </CardText>
+          <CardText> <FavoritesList/> </CardText>
         </CardBody>
       </div>
 
@@ -86,10 +94,20 @@ function UserProfile(props) {
       >
         <CardBody alignItems="center">
           <CardTitle tag="h2"> Favorites </CardTitle>
-          <CardText> </CardText>
+          <CardText> <FavoritesList/> </CardText>
         </CardBody>
       </div>
     </div>
   )
 }
-export default UserProfile
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    user: state.user
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { getUserData }
+)(UserProfile);

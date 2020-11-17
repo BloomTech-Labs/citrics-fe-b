@@ -6,6 +6,9 @@ import {
   MOVE_CITY_COMPARE,
   MOVE_CITY_ERROR,
   REMOVE_CITY_TO_COMPARE,
+  GET_USER_START,
+  GET_USER_SUCCESS,
+  GET_USER_FAILURE,
 } from '../actions'
 
 const initialApplicationState = {
@@ -17,9 +20,18 @@ const initialApplicationState = {
 
   comparingCities: [],
 
-  userPreferences: {
-    favorites: [],
+  user: {
+    favoriteCities: [],
     compareHistory: [],
+    userId: null, 
+    username: null,
+    minPopulation: null,
+    maxPopulation: null,
+    minRent: null,
+    maxRent: null,
+    minHouseCost: null,
+    maxHouseCost: null,
+    costOfLiving: null,
   },
 }
 
@@ -65,6 +77,20 @@ export default function reducer(state = initialApplicationState, action) {
           return city.cityId != action.payload
         }),
       }
+    case GET_USER_START:
+      
+      return { ...state, isLoading: true, errorMessage: null }
+
+    
+    case GET_USER_SUCCESS:
+      return {
+        ...state,
+        user: action.payload,
+        isLoading: false,
+        errorMessage: null,
+      }
+    case GET_USER_FAILURE:
+      return { ...state, isLoading: false, errorMessage: action.payload }
 
     default:
       return state
