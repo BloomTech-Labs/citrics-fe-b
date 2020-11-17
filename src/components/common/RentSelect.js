@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export default function SimpleSelect(props) {
+export default function RentSelect(props) {
   const classes = useStyles()
   const [age, setAge] = React.useState('')
 
@@ -37,9 +37,10 @@ export default function SimpleSelect(props) {
           <MenuItem value="">
             <em>Min</em>
           </MenuItem>
-          <MenuItem value={50000}>50k</MenuItem>
-          <MenuItem value={60000}>60K</MenuItem>
-          <MenuItem value={70000}>70k</MenuItem>
+          <MenuItem value={0}>0</MenuItem>
+          <MenuItem value={500}>500</MenuItem>
+          <MenuItem value={1000}>1000</MenuItem>
+          <MenuItem value={1500}>1500</MenuItem>
         </Select>
       </FormControl>
       <FormControl variant="filled" className={classes.formControl}>
@@ -54,9 +55,12 @@ export default function SimpleSelect(props) {
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          <MenuItem value={100000}>100K</MenuItem>
-          <MenuItem value={150000}>150K</MenuItem>
-          <MenuItem value={200000}>200K</MenuItem>
+          <MenuItem value={1000}>1000</MenuItem>
+          <MenuItem value={1500}>1500</MenuItem>
+          <MenuItem value={2000}>2000</MenuItem>
+          <MenuItem value={3000}>3000</MenuItem>
+          <MenuItem value={4000}>4000</MenuItem>
+          <MenuItem value={5000}>5000</MenuItem>
         </Select>
       </FormControl>
     </div>
