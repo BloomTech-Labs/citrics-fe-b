@@ -39,3 +39,11 @@ export const cityToCompare = cityId => dispatch => {
 export const removeCityFromCompare = cityId => dispatch => {
   dispatch({ type: REMOVE_CITY_TO_COMPARE, payload: cityId })
 }
+
+export const addFavorite = () => {
+  //ACTION GOES HERE
+}
+
+export const removeFavorite = () => {
+  //ACTION GOES HERE
+}

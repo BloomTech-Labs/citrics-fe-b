@@ -1,85 +1,92 @@
-
 //pages
-#home{
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .logo {
-
 }
 
 //layouts
 .city-card-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    width: 90%;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 90%;
+  justify-content: space-evenly;
 }
 
 //components
+
+.search-card {
+  cursor: pointer;
+  transition-property: box-shadow;
+  transition-duration: 0.5s;
+
+  &:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  }
+}
+
 .city-card {
-    color: var(--color-off-white);
-    width: 300px;
+  color: var(--color-off-white);
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 15px;
+  position: relative;
+  height: 170px;
+
+  .city-card-header {
+    background-color: var(--color-primary-blue);
+    width: inherit;
+    padding: 5px 20px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border: 1px solid black;
-    border-radius: 10px;
-    margin: 15px; 
-    cursor: pointer;
-    transition-property: box-shadow;
-    transition-duration: .5s;
-    position: relative;
-    height: 170px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
-    .city-card-header{
-        background-color: var(--color-primary-blue);
-        width: inherit;
-        padding: 5px 20px;
-        border-top-left-radius: 9px;
-        border-top-right-radius: 9px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-
-        h3{
-            font-size: 1.2rem;
-            color: var(--color-off-white);
-        }
+    h3 {
+      font-size: 1.2rem;
+      color: var(--color-off-white);
     }
 
-    .city-attributes{
-        padding: 5px 20px;
-        color: var(--color-primary-blue)
+    .favorite-heart {
+        background-color: var(--color-off-white);
     }
+  }
 
-    &:hover {
-        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    }
-    
+
+
+  .city-attributes {
+    padding: 5px 20px;
+    color: var(--color-primary-blue);
+  }
 }
 
 .removeCardFromCompare {
-    position: absolute;
-    background: var(--color-primary-blue);
-    color: white;
-    top: -10px;
-    right: -10px;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    font-size: 1.2rem;
-    border: none;
-    color: black;
+  position: absolute;
+  background: var(--color-off-white);
+  color: var(--color-primary-blue);
+  top: -10px;
+  right: -10px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
 
-    &:hover {
-        transition-duration: .5s;
-        transform: scale(1.1);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    }
+  &:hover {
+    transition-duration: 0.5s;
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  }
 }

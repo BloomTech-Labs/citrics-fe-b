@@ -18,7 +18,7 @@ const initialApplicationState = {
   comparingCities: [],
 
   userPreferences: {
-    favorites: [],
+    favorites: [116],
     compareHistory: [],
   },
 }
