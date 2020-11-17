@@ -8,7 +8,7 @@ import { getCLIArray } from '../../helper/dataProperties'
 const initialState = {
   searchValue: '',
   minPopulation: 0,
-  maxPopulation: 0,
+  maxPopulation: 200000,
   minRent: 0,
   maxRent: 0,
   minHouseCost: 0,
@@ -48,6 +48,13 @@ const Home = props => {
         {props.cities
           .filter(city => {
             return !comparisons.includes(city.cityId)
+          })
+          .filter(city => {
+            return state.minPopulation != initialState.minPopulation &&
+              state.maxPopulation != initialState.maxPopulation
+              ? city.population >= state.minPopulation &&
+                  city.population <= state.maxPopulation
+              : city
           })
           .map(city => {
             return <CityCard key={city.id} city={city} compare={false} />
