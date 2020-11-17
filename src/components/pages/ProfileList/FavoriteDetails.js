@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
-import { axiosWithAuth } from "../../axiosWithAuth.js";
-import { Button, Form, Label, Input, Row, Col } from 'reactstrap';
+//import { useParams, useHistory } from "react-router-dom";
+//import { Button, Form, Label, Input, Row, Col } from 'reactstrap';
 
 
 
@@ -10,17 +9,9 @@ export default function FavoriteDetails(props) {
   const {user} = props;
   //const [post, setPost] = useState();
   //const [edit, setEdit] = useState(false);
-  //const { id } = useParams();
-  /*const history = useHistory();
-  useEffect(() => {
-    axiosWithAuth()
-      .get(`/users/user/${id}`)
-      .then((res) => {
-        setPost(res.data);
-      })
-      .catch((err) => console.log(err));
-  }, [id]);
-  console.log(post);
+  //const { id } = useParams()
+
+  /*console.log(post);
   const handleSubmit = (e) => {
     e.preventDefault();
     axiosWithAuth()
@@ -44,14 +35,15 @@ export default function FavoriteDetails(props) {
       [e.target.name]: e.target.value,
     });
   };*/
-  if(!post){
+  if(!user){
     return null
   }
+
   return (
     <div className='FavoriteDetails'>
       <div className='details'>
      
-      <p className='postDescription'>{user.favoriteCities}</p>
+      <ul className='favoriteCities'>{user.favoriteCities.map(city => <li>city</li>)}</ul>
       
       {/*{!edit && <Button onClick={() => setEdit(true)}>Edit Post</Button>}
       {edit && (

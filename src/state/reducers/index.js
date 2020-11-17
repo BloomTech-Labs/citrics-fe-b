@@ -41,7 +41,7 @@ const initialApplicationState = {
   ],
 
   user: {
-    favoritesCities: [],
+    favoriteCities: [],
     compareHistory: [],
     userId: null, 
     username: null,
@@ -98,14 +98,14 @@ export default function reducer(state = initialApplicationState, action) {
         }),
       }
     case GET_USER_START:
-      return {
-        ...state,
-        user: state.user
+      
+      return { ...state, isLoading: true, errorMessage: null }
 
-      };
+    
     case GET_USER_SUCCESS:
       return {
         ...state,
+        user: action.payload,
         isLoading: false,
         errorMessage: null,
       }

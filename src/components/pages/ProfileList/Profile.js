@@ -4,7 +4,7 @@ import { CardBody, CardTitle, CardText, CardImg } from 'reactstrap'
 import { getUserData} from '../../../state/actions/index.js';
 import { connect } from 'react-redux';
 import UserPreferencesList from './UserPreferencesList'
-
+import FavoritesList from './FavoritesList'
 
 
 function UserProfile(props) {
@@ -77,7 +77,7 @@ function UserProfile(props) {
       >
         <CardBody alignItems="center">
           <CardTitle tag="h2"> About Me </CardTitle>
-          <CardText> </CardText>
+          <CardText> <FavoritesList/> </CardText>
         </CardBody>
       </div>
 
@@ -94,7 +94,7 @@ function UserProfile(props) {
       >
         <CardBody alignItems="center">
           <CardTitle tag="h2"> Favorites </CardTitle>
-          <CardText> </CardText>
+          <CardText> <FavoritesList/> </CardText>
         </CardBody>
       </div>
     </div>

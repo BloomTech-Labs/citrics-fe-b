@@ -1,33 +1,33 @@
 import React,{ useEffect} from 'react';
 import { connect } from 'react-redux';
-import Post from '../View Post/Post';
-import { fetch } from '../../store/actions/getAction.js';
-debugger;
+import { getUserData} from '../../../state/actions/index.js';
+import FavoriteDetails from './FavoriteDetails'
+
 const FavoritesList = props =>{
     useEffect(()=>{
-        props.fetch();
+        props.getUserData();
        
     },[])
     
     console.log(props)
 
      return (
-        <div className='FavoritesList'>
-            {props.favoriteCities.map((data)=>{
-             return (<FavoriteDetails details = {data}/>)
-             
-            })}
-        </div>
+      <div className='FavoritesList'>
+            
+      <FavoriteDetails user={props.user}/>
+      
+    
+      </div>
     )
 }
 const mapStateToProps = state => {
     console.log(state);
     return {
-      favoriteCities: state.getReducer.favoriteCities
+      user: state.user
     };
   };
   
   export default connect(
     mapStateToProps,
-    { fetch }
+    { getUserData }
   )(FavoritesList);

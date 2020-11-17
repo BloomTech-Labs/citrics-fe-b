@@ -1,5 +1,5 @@
 import React,{ useEffect} from 'react';
-import UserPreferencesEdit from './UserPreferencesEditForm'
+import UserPreferencesEdit from './UserPreferencesEdit'
 import { getUserData} from '../../../state/actions/index.js';
 import { connect } from 'react-redux';
 const UserPreferencesList = props =>{
