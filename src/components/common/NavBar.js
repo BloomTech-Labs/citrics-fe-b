@@ -21,18 +21,24 @@ border-bottom: 1px solid #05386B;
   .logo {
     display: flex;
     flex-direction: row;
+    align-items: center;
+
+    img {
+      width: 40px;
+      height: 50px;
+      margin-left: 5px;
+      margin-bottom: 8px;
+  
+    }
+
+    &:hover {
+        transition: all 0.4s ease-in-out;
+        transform: scale(1.01);
+        cursor: url(hand.cur), pointer;
+      }
   }
 
-  img {
-    width: 40px;
-    height: 50px;
-    verticle-align: middle;
-    // &:hover {
-    //   transition: all 0.4s ease-in-out;
-    //   transform: scale(1.1);
-    //   cursor: url(hand.cur), pointer;
-    // }
-  }
+
       #NavItems {
         height: 100%;
         display: flex;
@@ -63,7 +69,7 @@ const NavBar = () => {
   let history = useHistory()
 
   return (
-    <StyledNavBar>
+    <StyledNavBar className="nav-bar">
       <div className="navBarContainer">
         <div className="logo">
           <h1>CITRICS</h1>
