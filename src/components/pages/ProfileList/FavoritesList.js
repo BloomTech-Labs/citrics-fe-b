@@ -14,7 +14,7 @@ const FavoritesList = props =>{
      return (
         <div className='FavoritesList'>
             {props.favoriteCities.map((data)=>{
-             return (<Post details = {data}/>)
+             return (<FavoriteDetails details = {data}/>)
              
             })}
         </div>

@@ -5,21 +5,21 @@ import { Button, Form, Label, Input, Row, Col } from 'reactstrap';
 
 
 
-export default function PhotoDetailsSection() {
+export default function FavoriteDetails() {
   const [post, setPost] = useState();
   const [edit, setEdit] = useState(false);
   const { id } = useParams();
   const history = useHistory();
   useEffect(() => {
     axiosWithAuth()
-      .get(`/api/posts/${id}`)
+      .get(`/users/user/${id}`)
       .then((res) => {
         setPost(res.data);
       })
       .catch((err) => console.log(err));
   }, [id]);
   console.log(post);
-  const handleSubmit = (e) => {
+  /*const handleSubmit = (e) => {
     e.preventDefault();
     axiosWithAuth()
       .put(`/api/posts/${id}`, post)
@@ -41,7 +41,7 @@ export default function PhotoDetailsSection() {
       ...post,
       [e.target.name]: e.target.value,
     });
-  };
+  };*/
   if(!post){
     return null
   }
@@ -51,7 +51,7 @@ export default function PhotoDetailsSection() {
       <h2>{post.title}</h2>
       <p className='postDescription'>{post.description}</p>
       <p className='postLocation'>{post.location}</p>
-      {!edit && <Button onClick={() => setEdit(true)}>Edit Post</Button>}
+      {/*{!edit && <Button onClick={() => setEdit(true)}>Edit Post</Button>}
       {edit && (
         
         <Form className='editForm' onSubmit={handleSubmit}>
@@ -88,7 +88,7 @@ export default function PhotoDetailsSection() {
             <Button onClick={handleDelete}>Delete</Button>
           </div>
         </Form>
-      )}
+      )} */}
       </div>
       <img top width="100%" src={post.photo_url} alt={post.title}/>
 
