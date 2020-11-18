@@ -51,7 +51,7 @@ const SearchBar = props => {
   const toggle = () => setOpen(!open)
 
   return (
-    <div className="searchbar-wrapper">
+    <div className="search-area-container">
       <StyledInput
         type="text"
         onChange={props.onChangeHandler}

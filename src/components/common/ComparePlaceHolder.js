@@ -8,11 +8,11 @@ const StyledComparePlaceHolder = Styled.div`
         /* background-color: white; */
         color: #05386B;
         /* border: 3px solid #05386B; */
-        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
     }
  background-color: #edf4e1;
  width: 300px;
- height: 170px;
+ height: 180px;
  padding: 1rem;
  border-radius: 10px;
  display: flex;
@@ -33,7 +33,7 @@ const ComparePlaceHolder = () => {
         history.push('/')
       }}
     >
-      <p>Click Here To Search For Another City To Compare</p>
+      <p>Click a card to compare.</p>
     </StyledComparePlaceHolder>
   )
 }
