@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Plot from 'react-plotly.js'
-import { useSelector } from 'react-redux'
 
 import {
   CloudOutlined,

@@ -97,7 +97,7 @@ const Home = props => {
           //   city.costOfLivingIndex < breakpoints[2] ? city.costOfLivingIndex < breakpoints[2] : city
           // })
           .map(city => {
-            return <CityCard key={city.id} city={city} compare={false} />
+            return <CityCard key={city.cityId} city={city} compare={false} />
           })}
       </div>
     </section>

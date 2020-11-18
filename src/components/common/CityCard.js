@@ -42,22 +42,27 @@ const CityCard = props => {
   } else {
     return (
       <div className="city-card">
-        <button
-          className="removeCardFromCompare"
-          onClick={e => {
-            e.preventDefault()
-            props.removeCityFromCompare(props.city.cityId)
-          }}
-        >
-          x
-        </button>
-        <h3>
-          {props.city.cityName}, {props.city.stateCode}
-        </h3>
-        <p>Population: {formatLongNum(props.city.population)}</p>
-        <p>Rent: {props.city.rent}</p>
-        <p>House Cost: {props.city.averageHomeCost}</p>
-        <p>Cost of Living Index: {props.city.costOfLivingIndex}</p>
+        <div className="city-card-header">
+          <button
+            className="removeCardFromCompare"
+            onClick={e => {
+              e.preventDefault()
+              props.removeCityFromCompare(props.city.cityId)
+            }}
+          >
+            x
+          </button>
+          <h3>
+            {props.city.cityName}, {props.city.stateCode}
+          </h3>
+          <HeartOutlined />
+        </div>
+        <div className="city-attributes">
+          <p>Population: {formatLongNum(props.city.population)}</p>
+          <p>Rent: {props.city.rent}</p>
+          <p>House Cost: {props.city.averageHomeCost}</p>
+          <p>Cost of Living Index: {props.city.costOfLivingIndex}</p>
+        </div>
       </div>
     )
   }

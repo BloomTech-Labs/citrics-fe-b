@@ -84,6 +84,14 @@ const FooterBar = props => {
     }
   }, [location])
 
+  useEffect(() => {
+    if (props.comparingCities.length === 0) {
+      setCompareBTNDisable(true)
+    } else {
+      setCompareBTNDisable(false)
+    }
+  }, [props.comparingCities])
+
   const toggleFooter = props => {
     document.querySelector('#footerBar').classList.toggle('hidden')
     document.querySelector('#footerToggle').classList.toggle('buttonToggle')
@@ -97,12 +105,16 @@ const FooterBar = props => {
           toggleFooter()
         }}
       ></div>
-      {compareBTNDisable ? null : (
+      {compareBTNDisable ? null : props.comparingCities.length === 1 ? (
+        <Link id="compareBTN" to="/compare/population">
+          View
+        </Link>
+      ) : (
         <Link id="compareBTN" to="/compare/population">
           Compare
         </Link>
       )}
-      <div class="cityCompareContainer">
+      <div className="cityCompareContainer">
         {props.comparingCities.length >= 1 ? (
           <CityCard
             key={props.comparingCities[0].cityId}
