@@ -102,7 +102,7 @@ const FooterBar = props => {
           Compare
         </Link>
       )}
-      <div class="cityCompareContainer">
+      <div className="cityCompareContainer">
         {props.comparingCities.length >= 1 ? (
           <CityCard
             key={props.comparingCities[0].cityId}

@@ -39,7 +39,12 @@ const CityCard = props => {
 
   if (props.compare === false) {
     return (
-      <div className="city-card search-card">
+      <div
+        style={{
+          backgroundImage: `url("${props.city.imageUrl}")`,
+        }}
+        className="city-card"
+      >
         <PlusOutlined
           className="card-button add"
           onClick={e => {

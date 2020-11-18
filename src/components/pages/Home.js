@@ -50,7 +50,7 @@ const Home = props => {
             return !comparisons.includes(city.cityId)
           })
           .map(city => {
-            return <CityCard key={city.id} city={city} compare={false} />
+            return <CityCard key={city.cityId} city={city} compare={false} />
           })}
       </div>
     </section>
