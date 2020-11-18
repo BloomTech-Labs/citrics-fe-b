@@ -4,7 +4,7 @@ import { axiosWithAuth } from "../../../api/axiosWithAuth.js";
 import { Button, Form, Label, Input, Row, Col } from 'reactstrap';
 
 
-
+//this displays the user's preferences
 export default function UserPreferencesEdit(props) {
     const {user} = props
     //const [edit, setEdit] = useState(false);
@@ -31,13 +31,16 @@ export default function UserPreferencesEdit(props) {
     return null
   }
   return (
-    <div className='UserPreferenceEdit'>
+    <div className='UserPreferencesDetails'>
       <div className='details'>
       <p className='userPopulation'>{user.minPopulation}</p>
       <p className='userPopulation'>{user.maxPopulation}</p>
-      <p className='userCostOfLiving'>{user.costOfLiving}</p>
       <p className='userRent'>{user.minRent}</p>
       <p className='userRent'>{user.maxRent}</p>
+      <p className='userHouseCost'>{user.minHouseCost}</p>
+      <p className='userHouseCost'>{user.maxHouseCost}</p>
+      <p className='userCostOfLiving'>{user.costOfLiving}</p>
+      
       
       </div>
       {/*
