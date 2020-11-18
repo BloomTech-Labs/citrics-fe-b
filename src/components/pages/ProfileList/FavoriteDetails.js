@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react'
 //import { useParams, useHistory } from "react-router-dom";
 //import { Button, Form, Label, Input, Row, Col } from 'reactstrap';
 
-
-
-
 export default function FavoriteDetails(props) {
-  const {user} = props;
+  const { user } = props
   //const [post, setPost] = useState();
   //const [edit, setEdit] = useState(false);
   //const { id } = useParams()
@@ -35,17 +32,20 @@ export default function FavoriteDetails(props) {
       [e.target.name]: e.target.value,
     });
   };*/
-  if(!user){
+  if (!user) {
     return null
   }
 
   return (
-    <div className='FavoriteDetails'>
-      <div className='details'>
-     
-      <ul className='favoriteCities'>{user.favoriteCities.map(city => <li>city</li>)}</ul>
-      
-      {/*{!edit && <Button onClick={() => setEdit(true)}>Edit Post</Button>}
+    <div className="FavoriteDetails">
+      <div className="details">
+        <ul className="favoriteCities">
+          {user.favoriteCities.map(city => (
+            <li>city</li>
+          ))}
+        </ul>
+
+        {/*{!edit && <Button onClick={() => setEdit(true)}>Edit Post</Button>}
       {edit && (
         
         <Form className='editForm' onSubmit={handleSubmit}>
@@ -84,8 +84,6 @@ export default function FavoriteDetails(props) {
         </Form>
       )} */}
       </div>
-      
-
     </div>
   )
 }

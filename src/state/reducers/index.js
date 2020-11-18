@@ -23,7 +23,7 @@ const initialApplicationState = {
   user: {
     favoriteCities: [],
     compareHistory: [],
-    userId: null, 
+    userId: null,
     username: null,
     minPopulation: null,
     maxPopulation: null,
@@ -78,10 +78,8 @@ export default function reducer(state = initialApplicationState, action) {
         }),
       }
     case GET_USER_START:
-      
       return { ...state, isLoading: true, errorMessage: null }
 
-    
     case GET_USER_SUCCESS:
       return {
         ...state,

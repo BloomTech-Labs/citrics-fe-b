@@ -3,7 +3,9 @@ import { connect } from 'react-redux'
 import Styled from 'styled-components'
 import StarRatingComponent from 'react-star-rating-component'
 import { useLocation } from 'react-router-dom'
-import SimpleSelect from './SelectComponent'
+import PopulationSelect from './PopulationSelect'
+import HouseCostSelect from './HouseCostSelect'
+import RentSelect from './RentSelect'
 
 const StyledInput = Styled.input`
 width: 65%;
@@ -51,7 +53,7 @@ const SearchBar = props => {
   const toggle = () => setOpen(!open)
 
   return (
-    <div className="searchbar-wrapper">
+    <div className="search-area-container">
       <StyledInput
         type="text"
         onChange={props.onChangeHandler}
@@ -83,7 +85,7 @@ const SearchBar = props => {
               value={props.initialState.maxPopulation.value}
               onChange={props.onChangeHandler}
             /> */}
-            <SimpleSelect
+            <PopulationSelect
               onChange={props.onChangeHandler}
               min={props.initialState.minPopulation.value}
               max={props.initialState.maxPopulation.value}
@@ -112,7 +114,7 @@ const SearchBar = props => {
               value={props.initialState.maxRent.value}
               onChange={props.onChangeHandler}
             /> */}
-            <SimpleSelect
+            <RentSelect
               onChange={props.onChangeHandler}
               min={props.initialState.minRent.value}
               max={props.initialState.maxRent.value}
@@ -137,7 +139,7 @@ const SearchBar = props => {
               value={props.initialState.maxHouseCost.value}
               onChange={props.onChangeHandler}
             /> */}
-            <SimpleSelect
+            <HouseCostSelect
               onChange={props.onChangeHandler}
               min={props.initialState.minHouseCost.value}
               max={props.initialState.maxHouseCost.value}

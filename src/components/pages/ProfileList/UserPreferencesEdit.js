@@ -6,11 +6,11 @@ import { Button, Form, Label, Input, Row, Col } from 'reactstrap';
 
 //this displays the user's preferences
 export default function UserPreferencesEdit(props) {
-    const {user} = props
-    //const [edit, setEdit] = useState(false);
-    //const { id } = useParams();
+  const { user } = props
+  //const [edit, setEdit] = useState(false);
+  //const { id } = useParams();
 
-    /*const handleSubmit = (e) => {
+  /*const handleSubmit = (e) => {
       e.preventDefault();
       axiosWithAuth()
         .patch(`/users//user/1`, user)
@@ -27,7 +27,7 @@ export default function UserPreferencesEdit(props) {
         [e.target.name]: e.target.value,
       });
     }; */
-  if(!user){
+  if (!user) {
     return null
   }
   return (
