@@ -98,7 +98,7 @@ const FooterBar = props => {
         }}
       ></div>
       {compareBTNDisable ? null : (
-        <Link id="compareBTN" to="/compare/population">
+        <Link id="compareBTN" to="/compare">
           Compare
         </Link>
       )}
