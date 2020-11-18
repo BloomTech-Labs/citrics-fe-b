@@ -45,7 +45,7 @@ export const removeCityFromCompare = cityId => dispatch => {
 }
 
 export const getUserData = () => dispatch => {
-  dispatch({ type: GET_USER_START})
+  dispatch({ type: GET_USER_START })
   axios
     .get(`https://labs-28-citrics-b.herokuapp.com/users/user/1`)
     .then(res => {

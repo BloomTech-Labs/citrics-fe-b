@@ -1,67 +1,124 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { cityToCompare, removeCityFromCompare } from '../../state/actions'
+
+import { formatLongNum, formatCurrency } from '../../helper/formatNumbers'
+
 import {
   HeartOutlined,
   HeartFilled,
   InfoCircleOutlined,
+  PlusOutlined,
+  CloseOutlined,
 } from '@ant-design/icons'
 
-function formatLongNum(num) {
-  return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
-}
-
-function formatCurrency(num) {
-  return '$' + num.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
-}
-
 const CityCard = props => {
-  if (props.compare == false) {
+  const [isFavorite, setFavorite] = useState(false)
+
+  const toggleFavorite = e => {
+    e.stopPropagation()
+    setFavorite(!isFavorite)
+
+    // if (isFavorite === true) {
+    //   removeFavorite()
+    // } else {
+    //   addFavorite()
+    // }
+  }
+
+  if (props.compare === false) {
     return (
       <div
-        className="city-card"
-        onClick={e => {
-          e.preventDefault()
-          props.cityToCompare(props.city.cityId)
+        style={{
+          backgroundImage: `url("${props.city.imageUrl}")`,
         }}
+        className="city-card"
       >
+        <PlusOutlined
+          className="card-button add"
+          onClick={e => {
+            e.preventDefault()
+            props.cityToCompare(props.city.cityId)
+          }}
+        />
         <div className="city-card-header">
           <h3 className="city-name">
             {props.city.cityName}, {props.city.stateCode}
           </h3>
-          <HeartOutlined />
+          {isFavorite ? (
+            <HeartFilled onClick={toggleFavorite} />
+          ) : (
+            <HeartOutlined onClick={toggleFavorite} />
+          )}
         </div>
         <div className="city-attributes">
-          <p>Population: {formatLongNum(props.city.population)}</p>
-          <p>Rent: {formatCurrency(props.city.rent)}</p>
-          <p>House Cost: {formatCurrency(props.city.averageHomeCost)}</p>
-          <p>Cost of Living Index: {props.city.costOfLivingIndex}</p>
+          <div className="attribute">
+            <p className="attribute-title">Population: </p>{' '}
+            <p className="attribute-stat">
+              {formatLongNum(props.city.population)}
+            </p>
+          </div>
+          <div className="attribute">
+            <p className="attribute-title">Rent: </p>
+            <p className="attribute-stat">{formatCurrency(props.city.rent)}</p>
+          </div>
+          <div className="attribute">
+            <p className="attribute-title">House Cost: </p>{' '}
+            <p className="attribute-stat">
+              {formatCurrency(props.city.averageHomeCost)}
+            </p>
+          </div>
+          <div className="attribute">
+            <p className="attribute-title">Cost of Living Index: </p>{' '}
+            <p className="attribute-stat">{props.city.costOfLivingIndex}</p>
+          </div>
         </div>
       </div>
     )
   } else {
     return (
-      <div className="city-card">
+      <div
+        style={{
+          backgroundImage: `url("${props.city.imageUrl}")`,
+        }}
+        className="city-card"
+      >
+        <CloseOutlined
+          className="card-button remove"
+          onClick={e => {
+            e.preventDefault()
+            props.removeCityFromCompare(props.city.cityId)
+          }}
+        />
+
         <div className="city-card-header">
-          <button
-            className="removeCardFromCompare"
-            onClick={e => {
-              e.preventDefault()
-              props.removeCityFromCompare(props.city.cityId)
-            }}
-          >
-            x
-          </button>
-          <h3>
+          <h3 className="city-name">
             {props.city.cityName}, {props.city.stateCode}
           </h3>
-          <HeartOutlined />
+          {isFavorite ? <HeartFilled /> : <HeartOutlined />}
         </div>
         <div className="city-attributes">
-          <p>Population: {formatLongNum(props.city.population)}</p>
-          <p>Rent: {props.city.rent}</p>
-          <p>House Cost: {props.city.averageHomeCost}</p>
-          <p>Cost of Living Index: {props.city.costOfLivingIndex}</p>
+          <div className="attribute">
+            <p className="attribute-title">Population: </p>{' '}
+            <p className="attribute-stat">
+              {formatLongNum(props.city.population)}
+            </p>
+          </div>
+          <div className="attribute">
+            <p className="attribute-title">Rent: </p>
+            <p className="attribute-stat">{formatCurrency(props.city.rent)}</p>
+          </div>
+          <div className="attribute">
+            <p className="attribute-title">House Cost: </p>{' '}
+            <p className="attribute-stat">
+              {formatCurrency(props.city.averageHomeCost)}
+            </p>
+          </div>
+          <div className="attribute">
+            <p className="attribute-title">Cost of Living Index: </p>{' '}
+            <p className="attribute-stat">{props.city.costOfLivingIndex}</p>
+          </div>
+          >>>>>>> ffd46b4ad91400403c7cd771760fa7bcf90be2aa
         </div>
       </div>
     )
@@ -72,6 +129,7 @@ const mapStateToProps = state => {
   return {
     cities: state.cities,
     comparingCities: state.comparingCities,
+    // favorites: state.userPreferences.favorites
   }
 }
 

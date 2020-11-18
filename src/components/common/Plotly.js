@@ -23,6 +23,9 @@ const icons = {
 const Plotly = props => {
   const { graphLabel, data } = props
   const [graphTypeState, setGraphTypeState] = useState('bar')
+  // const theme = useSelector(state => state.theme);
+  // const cardHeight = 64 * data.length;
+  // const sty = styles(display, theme);
 
   const relativeProperty = () => {
     switch (graphLabel) {
@@ -76,9 +79,8 @@ const Plotly = props => {
   return (
     <div className="card">
       <div className="cardInfo">
-        <h3 className="plotlyName">
-          {icons[graphLabel]} {graphLabel}
-        </h3>
+        {icons[graphLabel]}
+        <h3 className="plotlyName">{graphLabel}</h3>
         <div className="antdSwitch">
           <Switch
             checkedChildren="Historical"
@@ -111,10 +113,10 @@ const Plotly = props => {
                   marker: {
                     color: citydata.color,
                   },
-                  name: `${citydata.cityName}, ${citydata.stateCode}`,
+                  // name: `${citydata.cityname}, ${citydata.citystate}`,
                   orientation: 'h',
-                  // hoverinfo: 'skip',
-                  // showlegend: false,
+                  hoverinfo: 'skip',
+                  showlegend: false,
                 }
               : {
                   /// BAR GRAPH
@@ -122,14 +124,13 @@ const Plotly = props => {
                   y: [citydata['cityName']],
                   type: graphTypeState,
                   mode: 'markers',
-                  hoverinfo: 'all',
                   marker: {
                     color: citydata.color,
                   },
-                  name: `${citydata.cityName}, ${citydata.stateCode}`,
+                  // name: `${citydata.cityname}, ${citydata.citystate}`,
                   orientation: 'h',
                   // hoverinfo: 'skip',
-                  // showlegend: false,
+                  showlegend: false,
                 }
           })}
           layout={{
@@ -140,18 +141,18 @@ const Plotly = props => {
             yaxis: {
               automargin: true,
               visible: true,
-              gridcolor: '#EDF4E1',
+              gridcolor: '#ffffff20',
             },
             xaxis: {
               automargin: true,
               visible: true,
-              gridcolor: '#EDF4E1',
+              gridcolor: '#ffffff20',
             },
             font: {
-              color: '#EDF4E1',
+              color: '#ffffff80',
             },
             line: {
-              color: '#EDF4E1',
+              color: 'white',
             },
           }}
           useResizeHandler

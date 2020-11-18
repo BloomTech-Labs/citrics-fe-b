@@ -1,16 +1,15 @@
 import React from 'react'
 import { CardBody, CardTitle, CardText, CardImg } from 'reactstrap'
 // import 'bootstrap/dist/css/bootstrap.min.css'
-import { getUserData} from '../../../state/actions/index.js';
-import { connect } from 'react-redux';
+import { getUserData } from '../../../state/actions/index.js'
+import { connect } from 'react-redux'
 import UserPreferencesList from './UserPreferencesList'
 import FavoritesList from './FavoritesList'
 
-
 function UserProfile(props) {
-  const { user } = props;
+  const { user } = props
   if (user == null) {
-    return null;
+    return null
   }
   return (
     <div
@@ -57,7 +56,9 @@ function UserProfile(props) {
       >
         <CardBody alignItems="center">
           <CardTitle tag="h2"> User Preferences </CardTitle>
-          <CardText> <UserPreferencesList /> 
+          <CardText>
+            {' '}
+            <UserPreferencesList />
           </CardText>
         </CardBody>
       </div>
@@ -77,7 +78,10 @@ function UserProfile(props) {
       >
         <CardBody alignItems="center">
           <CardTitle tag="h2"> About Me </CardTitle>
-          <CardText> <FavoritesList/> </CardText>
+          <CardText>
+            {' '}
+            <FavoritesList />{' '}
+          </CardText>
         </CardBody>
       </div>
 
@@ -94,20 +98,20 @@ function UserProfile(props) {
       >
         <CardBody alignItems="center">
           <CardTitle tag="h2"> Favorites </CardTitle>
-          <CardText> <FavoritesList/> </CardText>
+          <CardText>
+            {' '}
+            <FavoritesList />{' '}
+          </CardText>
         </CardBody>
       </div>
     </div>
   )
 }
 const mapStateToProps = state => {
-  console.log(state);
+  console.log(state)
   return {
-    user: state.user
-  };
-};
+    user: state.user,
+  }
+}
 
-export default connect(
-  mapStateToProps,
-  { getUserData }
-)(UserProfile);
+export default connect(mapStateToProps, { getUserData })(UserProfile)
