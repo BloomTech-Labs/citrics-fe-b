@@ -6,6 +6,7 @@ import HomePriceViz from './HomePriceViz'
 import IncomeViz from './IncomeViz'
 import TemperatureViz from './TemperatureViz'
 import Styled from 'styled-components'
+import { connect } from 'react-redux'
 
 const StyledCompareDiv = Styled.div`
 width: 85%;
@@ -17,25 +18,32 @@ padding-top: 0;
 height: 100vh;
 `
 
-const Compare = () => {
+const Compare = props => {
   return (
     <StyledCompareDiv>
       <CompareNav />
 
       <Route exact path="/compare/population">
-        <PopulationViz />
+        <PopulationViz comparingCities={props.comparingCities} />
       </Route>
       <Route exact path="/compare/avg-household-income">
-        <IncomeViz />
+        <IncomeViz comparingCities={props.comparingCities} />
       </Route>
       <Route exact path="/compare/avg-home-price">
-        <HomePriceViz />
+        <HomePriceViz comparingCities={props.comparingCities} />
       </Route>
       <Route exact path="/compare/avg-temperature">
-        <TemperatureViz />
+        <TemperatureViz comparingCities={props.comparingCities} />
       </Route>
     </StyledCompareDiv>
   )
 }
 
-export default Compare
+// export default Compare
+const mapStateToProps = state => {
+  return {
+    comparingCities: state.comparingCities,
+  }
+}
+
+export default connect(mapStateToProps, {})(Compare)
