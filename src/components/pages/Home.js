@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import SearchBar from '../common/SearchBar'
 import CityCard from '../common/CityCard'
+import Title from '../common/Title'
 import { getCities } from '../../state/actions'
 import { getCLIArray } from '../../helper/dataProperties'
 
@@ -47,6 +48,7 @@ const Home = props => {
 
   return (
     <section>
+      <Title />
       <SearchBar onChangeHandler={onChangeHandler} initialState={state} />
 
       <div className="city-card-container">
@@ -97,7 +99,7 @@ const Home = props => {
           //   city.costOfLivingIndex < breakpoints[2] ? city.costOfLivingIndex < breakpoints[2] : city
           // })
           .map(city => {
-            return <CityCard key={city.id} city={city} compare={false} />
+            return <CityCard key={city.cityId} city={city} compare={false} />
           })}
       </div>
     </section>
@@ -108,6 +110,7 @@ const mapStateToProps = state => {
   return {
     cities: state.cities,
     comparingCities: state.comparingCities,
+    favorites: state.userPreferences.favorites,
   }
 }
 

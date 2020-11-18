@@ -18,10 +18,10 @@
 
 @media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
   body {
-    --color-text: black;
-    --color-background: white;
+    --color-text: var(--color-primary-blue);
+    --color-background: var(--color-off-white);
     --color-background-header: var(--color-green);
-    --color-border: black;
+    --color-border: var(--color-primary-blue);
   }
 
   .dark-mode{
@@ -42,9 +42,9 @@
   }
 
   .light-mode{
-    --color-text: var(--ajw-black);
-    --color-background: white;
+    --color-text: var(--color-primary-blue);
+    --color-background: var(--color-off-white);;
     --color-background-header: var(--ajw-white);
-    --color-border: var(--ajw-black);
+    --color-border: var(--color-primary-blue);
   }
 }
