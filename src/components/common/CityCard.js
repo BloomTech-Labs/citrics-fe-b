@@ -63,10 +63,26 @@ const CityCard = props => {
           )}
         </div>
         <div className="city-attributes">
-          <p>Population: {formatLongNum(props.city.population)}</p>
-          <p>Rent: {formatCurrency(props.city.rent)}</p>
-          <p>House Cost: {formatCurrency(props.city.averageHomeCost)}</p>
-          <p>Cost of Living Index: {props.city.costOfLivingIndex}</p>
+          <div className="attribute">
+            <p className="attribute-title">Population: </p>{' '}
+            <p className="attribute-stat">
+              {formatLongNum(props.city.population)}
+            </p>
+          </div>
+          <div className="attribute">
+            <p className="attribute-title">Rent: </p>
+            <p className="attribute-stat">{formatCurrency(props.city.rent)}</p>
+          </div>
+          <div className="attribute">
+            <p className="attribute-title">House Cost: </p>{' '}
+            <p className="attribute-stat">
+              {formatCurrency(props.city.averageHomeCost)}
+            </p>
+          </div>
+          <div className="attribute">
+            <p className="attribute-title">Cost of Living Index: </p>{' '}
+            <p className="attribute-stat">{props.city.costOfLivingIndex}</p>
+          </div>
         </div>
       </div>
     )

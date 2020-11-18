@@ -33,10 +33,11 @@
   border-radius: 10px;
   margin: 15px;
   position: relative;
-  height: 170px;
+  height: 190px;
   transition-property: box-shadow;
   transition-duration: 0.5s;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  
 
   .city-card-header {
     background-color: var(--color-primary-blue);
@@ -59,11 +60,26 @@
     }
   }
 
-
-
   .city-attributes {
     padding: 5px 20px;
-    color: var(--color-primary-blue);
+    color: var(--color-off-white);
+    background-color: rgba(128, 128, 128, 0.30);
+    width: inherit;
+    height: inherit;
+
+    .attribute{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      background-color: #21476dd2;
+      padding: 0 10px;
+      border-radius: 5px;
+      margin: 4px;
+
+      .attribute-title{
+        font-weight: 900;
+      }
+    }
   }
 }
 
