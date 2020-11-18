@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Plotly from '../common/Plotly'
 
-const PopulationViz = () => {
+const PopulationViz = props => {
   return (
     <div>
-      <h1>Hello from the population page yo</h1>
+      <Plotly data={props.comparingCities} graphLabel="Population" />
     </div>
   )
 }
