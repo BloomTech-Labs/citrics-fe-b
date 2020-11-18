@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import SearchBar from '../common/SearchBar'
 import CityCard from '../common/CityCard'
+import Title from '../common/Title'
 import { getCities } from '../../state/actions'
 import { getCLIArray } from '../../helper/dataProperties'
 
@@ -42,6 +43,7 @@ const Home = props => {
 
   return (
     <section>
+      <Title />
       <SearchBar onChangeHandler={onChangeHandler} initialState={state} />
 
       <div className="city-card-container">

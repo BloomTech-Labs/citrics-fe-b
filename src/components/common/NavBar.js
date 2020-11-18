@@ -72,7 +72,7 @@ const NavBar = () => {
     <StyledNavBar className="nav-bar">
       <div className="navBarContainer">
         <div className="logo">
-          <h1>CITRICS</h1>
+          <h2>CITRICS</h2>
           <img
             src={require('../../images/citrics.png')}
             alt="citrics logo and name"
