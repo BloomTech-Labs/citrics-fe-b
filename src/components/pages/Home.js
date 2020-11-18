@@ -110,7 +110,7 @@ const mapStateToProps = state => {
   return {
     cities: state.cities,
     comparingCities: state.comparingCities,
-    favorites: state.userPreferences.favorites,
+    // favorites: state.userPreferences.favorites,
   }
 }
 
