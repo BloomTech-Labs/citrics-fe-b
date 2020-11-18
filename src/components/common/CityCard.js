@@ -118,7 +118,6 @@ const CityCard = props => {
             <p className="attribute-title">Cost of Living Index: </p>{' '}
             <p className="attribute-stat">{props.city.costOfLivingIndex}</p>
           </div>
-          >>>>>>> ffd46b4ad91400403c7cd771760fa7bcf90be2aa
         </div>
       </div>
     )
