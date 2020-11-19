@@ -9,7 +9,17 @@ import {
   GET_USER_START,
   GET_USER_SUCCESS,
   GET_USER_FAILURE,
+ 
 } from '../actions'
+
+import {
+ADD_FAVORITE_START,
+ADD_FAVORITE_SUCCESS,
+ADD_FAVORITE_FAILURE,
+REMOVE_FAVORITE_START,
+REMOVE_FAVORITE_SUCCESS,
+REMOVE_FAVORITE_FAILURE,
+} from '../actions/userActions'
 
 const initialApplicationState = {
   isLoading: false,
@@ -90,7 +100,34 @@ export default function reducer(state = initialApplicationState, action) {
     case GET_USER_FAILURE:
       return { ...state, isLoading: false, errorMessage: action.payload }
 
-    default:
+    case ADD_FAVORITE_START:
+      return { ...state, isLoading: true, errorMessage: null }
+  
+    case ADD_FAVORITE_SUCCESS:
+      return {
+        ...state,
+        user: action.payload,
+        isLoading: false,
+        errorMessage: null,
+      }
+    case ADD_FAVORITE_FAILURE:
+      return { ...state, isLoading: false, errorMessage: action.payload }
+    
+
+    case REMOVE_FAVORITE_START:
+      return { ...state, isLoading: true, errorMessage: null }
+  
+    case REMOVE_FAVORITE_SUCCESS:
+      return {
+        ...state,
+        user: action.payload,
+        isLoading: false,
+        errorMessage: null,
+      }
+    case REMOVE_FAVORITE_FAILURE:
+      return { ...state, isLoading: false, errorMessage: action.payload }
+    
+      default:
       return state
   }
 }

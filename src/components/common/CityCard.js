@@ -3,6 +3,9 @@ import { connect } from 'react-redux'
 import { cityToCompare, removeCityFromCompare } from '../../state/actions'
 
 import { formatLongNum, formatCurrency } from '../../helper/formatNumbers'
+import {addFavorite, removeFavorite} from '../../state/actions/userActions'
+import { useParams, useHistory } from "react-router-dom";
+
 
 import {
   HeartOutlined,
@@ -14,16 +17,20 @@ import {
 
 const CityCard = props => {
   const [isFavorite, setFavorite] = useState(false)
+  
+  
+
 
   const toggleFavorite = e => {
     e.stopPropagation()
     setFavorite(!isFavorite)
-
-    // if (isFavorite === true) {
-    //   removeFavorite()
-    // } else {
-    //   addFavorite()
-    // }
+    
+     if (isFavorite === true) {
+       debugger;
+       props.removeFavorite(props.city.cityId)
+     } else {
+       props.addFavorite(props.city.cityId)
+     }
   }
 
   if (props.compare === false) {
@@ -128,11 +135,13 @@ const mapStateToProps = state => {
   return {
     cities: state.cities,
     comparingCities: state.comparingCities,
-    // favorites: state.userPreferences.favorites
+    user: state.user
   }
 }
 
 export default connect(mapStateToProps, {
   cityToCompare,
   removeCityFromCompare,
+  removeFavorite,
+  addFavorite,
 })(CityCard)

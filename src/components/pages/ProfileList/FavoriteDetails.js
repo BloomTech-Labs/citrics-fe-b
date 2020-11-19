@@ -41,7 +41,7 @@ export default function FavoriteDetails(props) {
       <div className="details">
         <ul className="favoriteCities">
           {user.favoriteCities.map(city => (
-            <li>city</li>
+            <li>city.cityName</li>
           ))}
         </ul>
 
