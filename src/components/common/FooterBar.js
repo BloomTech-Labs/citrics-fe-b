@@ -17,10 +17,7 @@ position: fixed;
 z-index: 999;
 bottom: 0;
 background-color: #5bdb95;
-/* height: 22.5vh; */
 transition: all 0.8s ease-in-out;
-/* min-height: 175px;
-max-height: 300px; */
 border-top: 1px solid #05386B;
 
 #footerToggle {
@@ -33,10 +30,10 @@ border-top: 1px solid #05386B;
     font-size: 4rem;
     margin: 0;
     padding: 0;
-    background-color: #05386b;
+    background-color: #5BDB95;
     border-radius: 15px;
     transform: translateY(-25px);
-    box-shadow: 0px 0px 8px #5BDB95;
+    /* box-shadow: 0px 0px 8px #5BDB95; */
 }
 
 .cityCompareContainer {
@@ -50,7 +47,6 @@ border-top: 1px solid #05386B;
 #compareBTN {
     &:hover {
         transition: all 0.5s ease-in-out;
-        /* background-color: #edf4e1; */
         color: #5bdb95;
     }
     padding: 0.10rem 3rem;

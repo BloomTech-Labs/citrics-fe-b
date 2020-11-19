@@ -7,39 +7,72 @@ import PopulationSelect from './PopulationSelect'
 import HouseCostSelect from './HouseCostSelect'
 import RentSelect from './RentSelect'
 
-const StyledInput = Styled.input`
-width: 65%;
-border: none;
-border-radius: 10px;
-height: 4em;
-margin: 40px 60px;
-font-size: 15px;
-border: 1px solid #05386B;
-`
+const StyledSearch = Styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
+margin: 0 auto;
+align-items: center;
+.search-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+#searchBar {
+  width: 65%;
+  border-radius: 15px;
+  height: 4em;
+  margin: 2rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #05386B;
+  text-align: center;
+  &:focus, &:active {
+    outline: none;
+    border: 3px solid #5BDB95;
+  }
+}
 
-const StyledButton = Styled.button`
-width: 5rem;
-height: 4rem;
-background-color: #5bdb95;
-border: none;
-border-radius: 2px;
-color: white;
-`
+#dd-btn {
+  width: 5rem;
+  height: 4rem;
+  background-color: #5bdb95;
+  border: none;
+  border-radius: 15px;
+  color: white; 
+  font-size: 1rem;
+  &:hover {
+    background-color: #05386B;
+    transition: 0.5s;
+  }
+}
 
-const StyledH2 = Styled.h2`
-color: #5bdb95; 
+h2 {
+  color: #5bdb95;
+  font-size: 1.3rem;
+}
 `
-
-const StyledFilterInput = Styled.input`
-color: #05386b;
-width: 2.5rem;
-height: 2.5rem;
-border: none;
-`
-
 const StyledFilterDiv = Styled.div`
 display:flex;
 justify-content: space-evenly;
+z-index: 100;
+text-align: center;
+width: 75%;
+
+#costOfLiving {
+  background-color: #5BDB95;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px 5px 0 0;
+  margin-top: 0.5rem;
+  padding: 0.8rem 0;
+  &:hover {
+    background-color: #05386B;
+    transition: 0.2s;
+    border-bottom: 1px solid black;
+  }
+}
 `
 
 const SearchBar = props => {
@@ -53,38 +86,25 @@ const SearchBar = props => {
   const toggle = () => setOpen(!open)
 
   return (
-    <div className="search-area-container">
-      <StyledInput
-        type="text"
-        onChange={props.onChangeHandler}
-        name="searchValue"
-        value={props.initialState.searchValue.value}
-        placeholder="Search for a city!"
-        id="searchBar"
-      />
+    <StyledSearch className="search-area-container">
+      <div className="search-top">
+        <input
+          type="text"
+          onChange={props.onChangeHandler}
+          name="searchValue"
+          value={props.initialState.searchValue.value}
+          placeholder="Search for a city!"
+          id="searchBar"
+        />
 
-      <StyledButton id="dd-btn" onClick={() => toggle()}>
-        Filters
-      </StyledButton>
-
+        <button id="dd-btn" onClick={() => toggle()}>
+          Filters
+        </button>
+      </div>
       {open ? (
         <StyledFilterDiv>
           <section>
-            <StyledH2> Population </StyledH2>
-            {/* <StyledFilterInput
-              placeholder="Min"
-              name="minPopulation"
-              type="number"
-              value={props.initialState.minPopulation.value}
-              onChange={props.onChangeHandler}
-            />
-            <StyledFilterInput
-              placeholder="Max"
-              name="maxPopulation"
-              type="number"
-              value={props.initialState.maxPopulation.value}
-              onChange={props.onChangeHandler}
-            /> */}
+            <h2> Population </h2>
             <PopulationSelect
               onChange={props.onChangeHandler}
               min={props.initialState.minPopulation.value}
@@ -95,25 +115,13 @@ const SearchBar = props => {
           </section>
 
           <section>
-            <StyledH2>Cost of Living</StyledH2>
-            <StarRatingComponent starCount={5} />
+            <h2>Cost of Living</h2>
+            <div id="costOfLiving">
+              <StarRatingComponent starCount={5} />
+            </div>
           </section>
           <section>
-            <StyledH2>Rent</StyledH2>
-            {/* <StyledFilterInput
-              placeholder="Min"
-              name="minRent"
-              type="number"
-              value={props.initialState.minRent.value}
-              onChange={props.onChangeHandler}
-            />
-            <StyledFilterInput
-              placeholder="Max"
-              name="maxRent"
-              type="number"
-              value={props.initialState.maxRent.value}
-              onChange={props.onChangeHandler}
-            /> */}
+            <h2>Rent</h2>
             <RentSelect
               onChange={props.onChangeHandler}
               min={props.initialState.minRent.value}
@@ -124,21 +132,7 @@ const SearchBar = props => {
           </section>
 
           <section>
-            <StyledH2>House cost</StyledH2>
-            {/* <StyledFilterInput
-              placeholder="Min"
-              name="minHouseCost"
-              value={props.initialState.minHouseCost.value}
-              type="number"
-              onChange={props.onChangeHandler}
-            />
-            <StyledFilterInput
-              placeholder="Max"
-              name="maxHouseCost"
-              type="number"
-              value={props.initialState.maxHouseCost.value}
-              onChange={props.onChangeHandler}
-            /> */}
+            <h2>House cost</h2>
             <HouseCostSelect
               onChange={props.onChangeHandler}
               min={props.initialState.minHouseCost.value}
@@ -148,10 +142,8 @@ const SearchBar = props => {
             />
           </section>
         </StyledFilterDiv>
-      ) : (
-        ''
-      )}
-    </div>
+      ) : null}
+    </StyledSearch>
   )
 }
 
