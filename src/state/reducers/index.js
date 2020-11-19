@@ -2,27 +2,26 @@ import {
   GET_CITIES_START,
   GET_CITIES_SUCCESS,
   GET_CITIES_FAILURE,
-  REMOVE_CITY_COMPARE,
   MOVE_CITY_COMPARE,
   MOVE_CITY_ERROR,
   REMOVE_CITY_TO_COMPARE,
   GET_USER_START,
   GET_USER_SUCCESS,
   GET_USER_FAILURE,
- 
 } from '../actions'
 
 import {
-ADD_FAVORITE_START,
-ADD_FAVORITE_SUCCESS,
-ADD_FAVORITE_FAILURE,
-REMOVE_FAVORITE_START,
-REMOVE_FAVORITE_SUCCESS,
-REMOVE_FAVORITE_FAILURE,
+  ADD_FAVORITE_START,
+  ADD_FAVORITE_SUCCESS,
+  ADD_FAVORITE_FAILURE,
+  REMOVE_FAVORITE_START,
+  REMOVE_FAVORITE_SUCCESS,
+  REMOVE_FAVORITE_FAILURE,
 } from '../actions/userActions'
 
 const initialApplicationState = {
   isLoading: false,
+  favoriteLoading: false,
 
   errorMessage: null,
   compareErrorMessage: null,
@@ -58,13 +57,6 @@ export default function reducer(state = initialApplicationState, action) {
       }
     case GET_CITIES_FAILURE:
       return { ...state, isLoading: false, errorMessage: action.payload }
-    // case REMOVE_CITY_COMPARE:
-    //   return {
-    //     ...state,
-    //     cities: {state.cities.filter(city => {
-    //       return city.cityId != state.comparingCities.cityOne.cityId || city.cityId != state.comparingCities.cityTwo.cityId || city.cityId != state.comparingCities.cityThree.cityId
-    //     })}
-    //   }
     case MOVE_CITY_COMPARE:
       if (state.comparingCities.length < 3) {
         return {
@@ -101,33 +93,32 @@ export default function reducer(state = initialApplicationState, action) {
       return { ...state, isLoading: false, errorMessage: action.payload }
 
     case ADD_FAVORITE_START:
-      return { ...state, isLoading: true, errorMessage: null }
-  
+      return { ...state, favoriteLoading: true, errorMessage: null }
+
     case ADD_FAVORITE_SUCCESS:
       return {
         ...state,
         user: action.payload,
-        isLoading: false,
+        favoriteLoading: false,
         errorMessage: null,
       }
     case ADD_FAVORITE_FAILURE:
       return { ...state, isLoading: false, errorMessage: action.payload }
-    
 
     case REMOVE_FAVORITE_START:
-      return { ...state, isLoading: true, errorMessage: null }
-  
+      return { ...state, favoriteLoading: true, errorMessage: null }
+
     case REMOVE_FAVORITE_SUCCESS:
       return {
         ...state,
         user: action.payload,
-        isLoading: false,
+        favoriteLoading: false,
         errorMessage: null,
       }
     case REMOVE_FAVORITE_FAILURE:
       return { ...state, isLoading: false, errorMessage: action.payload }
-    
-      default:
+
+    default:
       return state
   }
 }

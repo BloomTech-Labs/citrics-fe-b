@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { cityToCompare, removeCityFromCompare } from '../../state/actions'
-
 import { formatLongNum, formatCurrency } from '../../helper/formatNumbers'
-import {addFavorite, removeFavorite} from '../../state/actions/userActions'
-import { useParams, useHistory } from "react-router-dom";
-
-
+import { addFavorite, removeFavorite } from '../../state/actions/userActions'
 import {
   HeartOutlined,
   HeartFilled,
@@ -17,20 +13,17 @@ import {
 
 const CityCard = props => {
   const [isFavorite, setFavorite] = useState(false)
-  
-  
-
 
   const toggleFavorite = e => {
     e.stopPropagation()
     setFavorite(!isFavorite)
-    
-     if (isFavorite === true) {
-       debugger;
-       props.removeFavorite(props.city.cityId)
-     } else {
-       props.addFavorite(props.city.cityId)
-     }
+
+    if (isFavorite === true) {
+      debugger
+      props.removeFavorite(props.city.cityId)
+    } else {
+      props.addFavorite(props.city.cityId)
+    }
   }
 
   if (props.compare === false) {
@@ -53,9 +46,12 @@ const CityCard = props => {
             {props.city.cityName}, {props.city.stateCode}
           </h3>
           {isFavorite ? (
-            <HeartFilled onClick={toggleFavorite} />
+            <HeartFilled className="toggleFavorite" onClick={toggleFavorite} />
           ) : (
-            <HeartOutlined onClick={toggleFavorite} />
+            <HeartOutlined
+              className="toggleFavorite"
+              onClick={toggleFavorite}
+            />
           )}
         </div>
         <div className="city-attributes">
@@ -102,7 +98,14 @@ const CityCard = props => {
           <h3 className="city-name">
             {props.city.cityName}, {props.city.stateCode}
           </h3>
-          {isFavorite ? <HeartFilled /> : <HeartOutlined />}
+          {isFavorite ? (
+            <HeartFilled className="toggleFavorite" onClick={toggleFavorite} />
+          ) : (
+            <HeartOutlined
+              className="toggleFavorite"
+              onClick={toggleFavorite}
+            />
+          )}
         </div>
         <div className="city-attributes">
           <div className="attribute">
@@ -135,7 +138,7 @@ const mapStateToProps = state => {
   return {
     cities: state.cities,
     comparingCities: state.comparingCities,
-    user: state.user
+    user: state.user,
   }
 }
 
