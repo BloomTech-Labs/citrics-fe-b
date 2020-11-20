@@ -13,16 +13,33 @@ export default function UserPreferencesEdit(props) {
     return null
   }
   return (
-    <div className='UserPreferencesDetails'>
-      <div className='details' style={{color:"#EDF4E1"}}>
+    <div className='UserPreferencesDetails'  
+    style={{
+      padding: '2%',
+      }}>
+      <div className='details' 
+      style={{
+        color:"#EDF4E1",
+        display: 'flex',
+        justifyContent: 'space-evenly',
+        flexWrap: 'wrap',
+        padding: '2%',
+       
+        }}>
 
-        <p className='userPopulation'>{"Minimum Population: "}{user.minPopulation} </p>
-        <p className='userPopulation'>{"Maximum Population: "}{user.maxPopulation}</p>
-        <p className='userRent'>{"Minimum Rent: "}{user.minRent}</p>
-        <p className='userRent'>{"Maximum Rent: "}{user.maxRent}</p>
-        <p className='userHouseCost'>{"Minimum House Cost: "}{user.minHouseCost}</p>
-        <p className='userHouseCost'>{"Maximum House Cost: "}{user.maxHouseCost}</p>
-        <p className='userCostOfLiving'>{"Cost of Living: "}{user.costOfLiving}</p>
+        <CardBody className='userPopulation' style={{backgroundColor:"#5BDB95", padding:"2%", borderRadius: "1rem",  marginBottom: '5%'}}>{"Minimum Population:    "}{user.minPopulation} </CardBody>
+       
+        <CardBody className='userPopulation' style={{backgroundColor:"#5BDB95", padding:"2%", borderRadius: "1rem",  marginBottom: '5%'}}>{"Maximum Population:    "}{user.maxPopulation}</CardBody>
+     
+        <CardBody className='userRent' style={{backgroundColor:"#5BDB95", padding:"2%", borderRadius: "1rem",  marginBottom: '5%'}}>{"Minimum Rent:    "}{user.minRent}</CardBody>
+    
+        <CardBody className='userRent' style={{backgroundColor:"#5BDB95", padding:"2%", borderRadius: "1rem",  marginBottom: '5%'}}>{"Maximum Rent:    "}{user.maxRent}</CardBody>
+    
+        <CardBody className='userHouseCost' style={{backgroundColor:"#5BDB95", padding:"2%", borderRadius: "1rem",  marginBottom: '5%'}}>{"Minimum House Cost:   "}{user.minHouseCost}</CardBody>
+    
+        <CardBody className='userHouseCost' style={{backgroundColor:"#5BDB95", padding:"2%", borderRadius: "1rem",  marginBottom: '5%'}}>{"Maximum House Cost:   "}{user.maxHouseCost}</CardBody>
+   
+        <CardBody className='userCostOfLiving' style={{backgroundColor:"#5BDB95", padding:"2%", borderRadius: "1rem",  marginBottom: '5%'}}>{"Cost of Living:    "}{user.costOfLiving}</CardBody>
       
       
       </div>
