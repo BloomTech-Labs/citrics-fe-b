@@ -32,13 +32,13 @@ function UserProfile(props) {
         }}
       >
         <CardImg
-          src="https://images.unsplash.com/photo-1431887915357-68b819fae322?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9"
+          src={user.profilePicture}
           top
           width="100%"
           alt="Username"
         />
         <CardBody>
-          <CardTitle tag="h3"> Name Here </CardTitle>
+          <CardTitle tag="h3"> {user.username} </CardTitle>
         </CardBody>
       </div>
       <div
@@ -80,7 +80,7 @@ function UserProfile(props) {
           <CardTitle tag="h2"> About Me </CardTitle>
           <CardText>
             {' '}
-            <FavoritesList />{' '}
+            {' '}
           </CardText>
         </CardBody>
       </div>
@@ -97,7 +97,7 @@ function UserProfile(props) {
         }}
       >
         <CardBody alignItems="center">
-          <CardTitle tag="h2"> Favorites </CardTitle>
+          <CardTitle tag="h2"> Favorites Cities </CardTitle>
           <CardText>
             {' '}
             <FavoritesList />{' '}

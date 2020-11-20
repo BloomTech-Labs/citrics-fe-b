@@ -4,7 +4,7 @@ import { cityToCompare, removeCityFromCompare } from '../../state/actions'
 
 import { formatLongNum, formatCurrency } from '../../helper/formatNumbers'
 import {addFavorite, removeFavorite} from '../../state/actions/userActions'
-import { useParams, useHistory } from "react-router-dom";
+
 
 
 import {
@@ -19,8 +19,6 @@ const CityCard = props => {
   const [isFavorite, setFavorite] = useState(false)
   
   
-
-
   const toggleFavorite = e => {
     e.stopPropagation()
     setFavorite(!isFavorite)
