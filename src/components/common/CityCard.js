@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { cityToCompare, removeCityFromCompare } from '../../state/actions'
 import { formatLongNum, formatCurrency } from '../../helper/formatNumbers'
-import { addFavorite, removeFavorite } from '../../state/actions/userActions'
+import {addFavorite, removeFavorite} from '../../state/actions/userActions'
+
+
+
 import {
   HeartOutlined,
   HeartFilled,
@@ -13,7 +16,8 @@ import {
 
 const CityCard = props => {
   const [isFavorite, setFavorite] = useState(false)
-
+  
+  
   const toggleFavorite = e => {
     e.stopPropagation()
     setFavorite(!isFavorite)
