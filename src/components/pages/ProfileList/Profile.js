@@ -29,7 +29,7 @@ function UserProfile(props) {
           color: '#EDF4E1',
           fontFamily: 'Tajawal, sans-serif',
           marginTop: '5%',
-          borderRadius: ".5%"
+          borderRadius: "1rem"
 
         }}
       >
@@ -45,7 +45,9 @@ function UserProfile(props) {
           tag="h3" 
           style={{
           color: '#EDF4E1', 
-          padding: "5%"}}> 
+          padding: "5%",
+          paddingLeft: '25%',
+          paddingTop: '10%'}}> 
           {user.username} 
           </CardTitle>
           
@@ -62,6 +64,7 @@ function UserProfile(props) {
           fontFamily: 'Tajawal, sans-serif',
           marginTop: '5%',
           marginLeft: '5%',
+          borderRadius: "1rem"
         }}
       >
         <CardBody alignItems="center">
@@ -72,7 +75,9 @@ function UserProfile(props) {
           paddingTop: "3%",
           paddingBottom: "5%",
           paddingRight: "5%", 
-          paddingLeft: "5%"}}> 
+          paddingLeft: "5%",
+          
+          }}> 
 
           User Preferences 
 
@@ -126,6 +131,8 @@ function UserProfile(props) {
           color: '#EDF4E1',
           fontFamily: 'Tajawal, sans-serif',
           marginTop: '5%',
+          borderRadius: "1rem",
+          borderColor: '#05386B'
         }}
       >
         <CardBody 
