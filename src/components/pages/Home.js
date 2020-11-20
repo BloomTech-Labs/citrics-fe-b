@@ -5,6 +5,7 @@ import CityCard from '../common/CityCard'
 import Title from '../common/Title'
 import { getCities } from '../../state/actions'
 import { getCLIArray } from '../../helper/dataProperties'
+import Loader from 'react-loader-spinner'
 
 const initialState = {
   searchValue: '',
@@ -52,55 +53,38 @@ const Home = props => {
       <SearchBar onChangeHandler={onChangeHandler} initialState={state} />
 
       <div className="city-card-container">
-        {props.cities
-          .filter(city => {
-            return !comparisons.includes(city.cityId)
-          })
-          .filter(city => {
-            return state.minPopulation !== initialState.minPopulation
-              ? city.population >= state.minPopulation
-              : city
-          })
-          .filter(city => {
-            return state.maxPopulation !== initialState.maxPopulation
-              ? city.population <= state.maxPopulation
-              : city
-          })
-          .filter(city => {
-            return state.searchValue !== ''
-              ? city.cityName
-                  .toLowerCase()
-                  .includes(state.searchValue.toLowerCase())
-              : city
-          })
-          .filter(city => {
-            return state.minRent !== initialState.minRent
-              ? city.rent >= state.minRent
-              : city
-          })
-          .filter(city => {
-            return state.maxRent !== initialState.maxRent
-              ? city.rent <= state.maxRent
-              : city
-          })
-          .filter(city => {
-            return state.minHouseCost !== initialState.minHouseCost
-              ? city.averageHomeCost >= state.minHouseCost
-              : city
-          })
-          .filter(city => {
-            return state.maxHouseCost !== initialState.maxHouseCost
-              ? city.averageHomeCost <= state.maxHouseCost
-              : city
-          })
-          // .filter(city => {
-          //   return city.costOfLivingIndex < breakpoints[0] ? city.costOfLivingIndex < breakpoints[0] :
-          //   city.costOfLivingIndex < breakpoints[1] ? city.costOfLivingIndex < breakpoints[1] :
-          //   city.costOfLivingIndex < breakpoints[2] ? city.costOfLivingIndex < breakpoints[2] : city
-          // })
-          .map(city => {
-            return <CityCard key={city.cityId} city={city} compare={false} />
-          })}
+        {props.isLoading ? (
+          <Loader
+            type="Circles"
+            color="#5BDB95"
+            height={100}
+            width={100}
+            timeout={5000} //5 secs
+          />
+        ) : null}
+
+        {!props.isloading && props.cities.length > 0
+          ? props.cities
+              .filter(city => {
+                return (
+                  !comparisons.includes(city.cityId) &&
+                  city.population >= state.minPopulation &&
+                  city.population <= state.maxPopulation &&
+                  city.cityName
+                    .toLowerCase()
+                    .includes(state.searchValue.toLowerCase()) &&
+                  city.rent >= state.minRent &&
+                  city.rent <= state.maxRent &&
+                  city.averageHomeCost >= state.minHouseCost &&
+                  city.averageHomeCost <= state.maxHouseCost
+                )
+              })
+              .map(city => {
+                return (
+                  <CityCard key={city.cityId} city={city} compare={false} />
+                )
+              })
+          : null}
       </div>
     </section>
   )
@@ -110,6 +94,7 @@ const mapStateToProps = state => {
   return {
     cities: state.cities,
     comparingCities: state.comparingCities,
+    isLoading: state.isLoading,
     // favorites: state.userPreferences.favorites,
   }
 }

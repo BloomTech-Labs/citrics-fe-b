@@ -43,7 +43,7 @@ export default function PopulationSelect(props) {
           name={props.minName}
           className="simpleSelect"
         >
-          <MenuItem value="">
+          <MenuItem value={-1}>
             <em>Min</em>
           </MenuItem>
           <MenuItem value={0}>0</MenuItem>
@@ -64,8 +64,8 @@ export default function PopulationSelect(props) {
           name={props.maxName}
           className="simpleSelect"
         >
-          <MenuItem value="">
-            <em>None</em>
+          <MenuItem value={99999999}>
+            <em>Max</em>
           </MenuItem>
           <MenuItem value={100000}>100K</MenuItem>
           <MenuItem value={250000}>250K</MenuItem>
