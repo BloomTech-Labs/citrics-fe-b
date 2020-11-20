@@ -23,17 +23,11 @@
 
 }
 
-.search-area-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .city-card-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin: 1rem auto;
   width: 90%;
   justify-content: space-evenly;
 }
@@ -117,6 +111,15 @@
     transition-duration: 0.5s;
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  }
+  &:focus, &:active {
+    outline: none
+  }
+}
+
+.toggleFavorite {
+  &:active, &:focus {
+    outline: none;
   }
 }
 

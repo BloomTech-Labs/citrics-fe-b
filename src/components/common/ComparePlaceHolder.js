@@ -5,9 +5,8 @@ import { useHistory } from 'react-router-dom'
 const StyledComparePlaceHolder = Styled.div`
     &:hover {
         transition: all 0.5s;
-        /* background-color: white; */
         color: #05386B;
-        /* border: 3px solid #05386B; */
+        cursor: pointer;
 
     }
  background-color: #edf4e1;
@@ -33,7 +32,7 @@ const ComparePlaceHolder = () => {
         history.push('/')
       }}
     >
-      <p>Click a card to compare.</p>
+      <p>Click a card to search.</p>
     </StyledComparePlaceHolder>
   )
 }

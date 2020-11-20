@@ -4,6 +4,15 @@ import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
 import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
+import Styled from 'styled-components'
+
+const StyledHouse = Styled.div`
+.simpleSelect {
+    background-color: #5BDB95;
+    color: white;
+}
+`
+
 const useStyles = makeStyles(theme => ({
   formControl: {
     margin: theme.spacing(1),
@@ -20,7 +29,7 @@ export default function HouseCostSelect(props) {
     setAge(event.target.value)
   }
   return (
-    <div>
+    <StyledHouse>
       <FormControl variant="filled" className={classes.formControl}>
         <InputLabel id="demo-simple-select-filled-label">Min</InputLabel>
         <Select
@@ -29,8 +38,9 @@ export default function HouseCostSelect(props) {
           value={props.min}
           onChange={props.onChange}
           name={props.minName}
+          className="simpleSelect"
         >
-          <MenuItem value="">
+          <MenuItem value={-1}>
             <em>Min</em>
           </MenuItem>
           <MenuItem value={90000}>90K</MenuItem>
@@ -49,9 +59,10 @@ export default function HouseCostSelect(props) {
           value={props.max}
           onChange={props.onChange}
           name={props.maxName}
+          className="simpleSelect"
         >
-          <MenuItem value="">
-            <em>None</em>
+          <MenuItem value={99999999}>
+            <em>Max</em>
           </MenuItem>
           <MenuItem value={100000}>100K</MenuItem>
           <MenuItem value={250000}>250K</MenuItem>
@@ -63,6 +74,6 @@ export default function HouseCostSelect(props) {
           <MenuItem value={3000000}>3M</MenuItem>
         </Select>
       </FormControl>
-    </div>
+    </StyledHouse>
   )
 }

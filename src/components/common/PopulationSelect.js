@@ -4,6 +4,14 @@ import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
 import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
+import Styled from 'styled-components'
+
+const StyledPopulation = Styled.div`
+.simpleSelect {
+    background-color: #5BDB95;
+    color: white;
+}
+`
 
 const useStyles = makeStyles(theme => ({
   formControl: {
@@ -24,7 +32,7 @@ export default function PopulationSelect(props) {
   }
 
   return (
-    <div>
+    <StyledPopulation>
       <FormControl variant="filled" className={classes.formControl}>
         <InputLabel id="demo-simple-select-filled-label">Min</InputLabel>
         <Select
@@ -33,8 +41,9 @@ export default function PopulationSelect(props) {
           value={props.min}
           onChange={props.onChange}
           name={props.minName}
+          className="simpleSelect"
         >
-          <MenuItem value="">
+          <MenuItem value={-1}>
             <em>Min</em>
           </MenuItem>
           <MenuItem value={0}>0</MenuItem>
@@ -53,9 +62,10 @@ export default function PopulationSelect(props) {
           value={props.max}
           onChange={props.onChange}
           name={props.maxName}
+          className="simpleSelect"
         >
-          <MenuItem value="">
-            <em>None</em>
+          <MenuItem value={99999999}>
+            <em>Max</em>
           </MenuItem>
           <MenuItem value={100000}>100K</MenuItem>
           <MenuItem value={250000}>250K</MenuItem>
@@ -65,6 +75,6 @@ export default function PopulationSelect(props) {
           <MenuItem value={10000000}>10M</MenuItem>
         </Select>
       </FormControl>
-    </div>
+    </StyledPopulation>
   )
 }
