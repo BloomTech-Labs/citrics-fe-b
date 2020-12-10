@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import Plot from 'react-plotly.js'
-import { Switch } from 'antd'
 
 import {
   CloudOutlined,
@@ -57,15 +56,6 @@ const Plotly = props => {
       document.querySelector('.averageBtn').style.color = 'black'
     }
   }, [graphTypeState])
-
-  const graphTypeHandler = () => {
-    if (graphTypeState === 'bar') {
-      setGraphTypeState('line')
-    }
-    if (graphTypeState === 'line') {
-      setGraphTypeState('bar')
-    }
-  }
 
   const relativePropertyLineGraph = {
     historicalWeather: {

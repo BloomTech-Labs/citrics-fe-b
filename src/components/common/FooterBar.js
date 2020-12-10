@@ -73,7 +73,7 @@ const FooterBar = props => {
       document.querySelector('#footerBar').classList.add('hidden')
       document.querySelector('#footerToggle').classList.add('buttonToggle')
     }
-    if (location.pathname == '/') {
+    if (location.pathname === '/') {
       document.querySelector('#footerBar').classList.remove('hidden')
       document.querySelector('#footerToggle').classList.remove('buttonToggle')
     }

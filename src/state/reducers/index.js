@@ -76,7 +76,7 @@ export default function reducer(state = initialApplicationState, action) {
       return {
         ...state,
         comparingCities: state.comparingCities.filter(city => {
-          return city.cityId != action.payload
+          return city.cityId !== action.payload
         }),
       }
     case GET_USER_START:

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { cityToCompare, removeCityFromCompare } from '../../state/actions'
 import { formatLongNum, formatCurrency } from '../../helper/formatNumbers'
@@ -7,7 +7,6 @@ import { addFavorite, removeFavorite } from '../../state/actions/userActions'
 import {
   HeartOutlined,
   HeartFilled,
-  InfoCircleOutlined,
   PlusOutlined,
   CloseOutlined,
 } from '@ant-design/icons'
