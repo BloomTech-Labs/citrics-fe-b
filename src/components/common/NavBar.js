@@ -71,15 +71,17 @@ const NavBar = () => {
   return (
     <StyledNavBar className="nav-bar">
       <div className="navBarContainer">
-        <div className="logo">
+        <div
+          className="logo"
+          onClick={evt => {
+            evt.preventDefault()
+            history.push('/')
+          }}
+        >
           <h2>CITRICS</h2>
           <img
             src={require('../../images/citrics.png')}
             alt="citrics logo and name"
-            onClick={evt => {
-              evt.preventDefault()
-              history.push('/')
-            }}
           />
         </div>
 
