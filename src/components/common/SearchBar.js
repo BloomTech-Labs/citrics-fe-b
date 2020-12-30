@@ -78,6 +78,7 @@ width: 75%;
 const SearchBar = props => {
   const location = useLocation()
   const [open, setOpen] = useState(false)
+  //const { user } = props
 
   useEffect(() => {
     document.querySelector('#searchBar').focus()
